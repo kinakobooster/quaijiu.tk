@@ -1,0 +1,70 @@
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after {
+  content: "";
+  content: none; }
+
+q:before, q:after {
+  content: "";
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+main.is-ie8, main.is-ie9, main.is-ie10, main.is-ie11 {
+  display: block; }
+
+@font-face {
+  font-family: 'leaguegothic';
+  src: url("../fonts/leaguegothic-italic-webfont.eot");
+  src: url("../fonts/leaguegothic-italic-webfont.eot?iefix") format("eot"), url("../fonts/leaguegothic-italic-webfont.woff") format("woff"), url("../fonts/leaguegothic-italic-webfont.ttf") format("truetype"), url("../fonts/leaguegothic-italic-webfont.svg#webfontjSpbZQRv") format("svg"); }
+
+.resizeimage img {
+  width: 100%; }
+
+body {
+  margin: auto;
+  background: #334;
+  color: #eee; }
+
+header {
+  background-color: #114; }
+
+h1 {
+  margin: auto; }
+
+.what-wrapper {
+  background: #104;
+  color: #eee;
+  height: 300px;
+  margin: auto; }
+  .what-wrapper h2 {
+    padding: 1em;
+    text-align: center;
+    font-size: 3em;
+    margin-bottom: 1em; }
+  .what-wrapper p {
+    text-align: center; }
+
+.person h3 {
+  font-family: leaguegothic;
+  font-size: 6em; }
