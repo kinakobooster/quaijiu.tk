@@ -1,1 +1,6 @@
-p.resizeimage img { width: 100%; }
+.resizeimage img { width: 100%; }
+body{
+  background: #334;
+  color: #EEE;
+
+}
