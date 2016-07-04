@@ -9,9 +9,9 @@ var runSequence = require('run-sequence'); // Needed for default file
 
 // Preprocessor task
 gulp.task('sass', function() {
-  return gulp.src('src/assets/stylesheets/*.scss') // SCSS/Sass path here, change to .scss if needed
+  return gulp.src('src/assets/stylesheets/*.sass') // SCSS/Sass path here, change to .scss if needed
     .pipe(sass()) // Using gulp-sass
-    .pipe(gulp.dest('dist/assets/stylesheets/')) // Target SCSS/Sass file here
+    .pipe(gulp.dest('./dist/assets/stylesheets/')) // Target SCSS/Sass file here
     .pipe(browserSync.reload({ // Added into SCSS/Sass config to work with Live Reload
       stream: true
     }));
@@ -25,6 +25,9 @@ gulp.task('jade', function() {
         pretty: true
     }))
     .pipe(gulp.dest('./'))
+    .pipe(browserSync.reload({
+      stream: true
+    }));
 })
 
 // Watches file for changes
