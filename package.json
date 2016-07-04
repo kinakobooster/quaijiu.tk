@@ -1,0 +1,26 @@
+{
+  "name": "etahapi.github.io",
+  "version": "0.0.1",
+  "description": "web site of etahapi",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/etahapi/etahapi.github.io.git"
+  },
+  "author": "etahapi cipher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/etahapi/etahapi.github.io/issues"
+  },
+  "homepage": "https://etahapi.github.io",
+  "dependencies": {
+    "browser-sync": "*",
+    "gulp": "^3.9.1",
+    "gulp-jade": "*",
+    "gulp-sass": "*",
+    "run-sequence": "^1.2.2"
+  }
+}

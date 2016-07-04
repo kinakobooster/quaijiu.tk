@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'leaguegothic';
-    src: url('fonts/leaguegothic-italic-webfont.eot');
-    src: url('fonts/leaguegothic-italic-webfont.eot?iefix') format('eot'),
-         url('fonts/leaguegothic-italic-webfont.woff') format('woff'),
-         url('fonts/leaguegothic-italic-webfont.ttf') format('truetype'),
-         url('fonts/leaguegothic-italic-webfont.svg#webfontjSpbZQRv') format('svg');
+    src: url('src/assets/fonts/leaguegothic-italic-webfont.eot');
+    src: url('src/assets/fonts/leaguegothic-italic-webfont.eot?iefix') format('eot'),
+         url('src/assets/fonts/leaguegothic-italic-webfont.woff') format('woff'),
+         url('src/assets/fonts/leaguegothic-italic-webfont.ttf') format('truetype'),
+         url('src/assets/fonts/leaguegothic-italic-webfont.svg#webfontjSpbZQRv') format('svg');
 }
 
 .resizeimage img { width: 100%; }
