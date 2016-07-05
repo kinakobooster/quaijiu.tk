@@ -16,11 +16,17 @@
     "url": "https://github.com/etahapi/etahapi.github.io/issues"
   },
   "homepage": "https://etahapi.github.io",
-  "dependencies": {
-    "browser-sync": "*",
+  "devDependencies": {
+    "babel": "^6.5.2",
+    "babel-core": "^6.10.4",
+    "babel-preset-es2015": "^6.9.0",
+    "browser-sync": "2.13.0",
     "gulp": "^3.9.1",
+    "gulp-angular-embed-templates": "1.1.0",
+    "gulp-babel": "^6.1.2",
     "gulp-jade": "*",
-    "gulp-sass": "*",
+    "gulp-load-plugins": "^1.2.4",
+    "gulp-sass": "2.3.2",
     "run-sequence": "^1.2.2"
   }
 }
