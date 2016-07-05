@@ -1,3 +1,4 @@
+@import 'https://fonts.googleapis.com/css?family=Roboto:900';
 body {
   line-height: 1; }
 
@@ -43,8 +44,9 @@ main.is-ie8, main.is-ie9, main.is-ie10, main.is-ie11 {
 
 body {
   margin: auto;
-  background: #334;
-  color: #eee; }
+  background: #33333D;
+  color: #eee;
+  font-family: sans-serif; }
 
 header {
   background-color: #114; }
@@ -53,18 +55,54 @@ h1 {
   margin: auto; }
 
 .what-wrapper {
-  background: #104;
+  background: #0d030f;
   color: #eee;
   height: 300px;
   margin: auto; }
   .what-wrapper h2 {
-    padding: 1em;
+    padding: 0.5em;
     text-align: center;
     font-size: 3em;
     margin-bottom: 1em; }
   .what-wrapper p {
     text-align: center; }
 
-.person h3 {
-  font-family: leaguegothic;
-  font-size: 6em; }
+.biography-wrapper h2 {
+  display: none; }
+
+.biography-wrapper .person {
+  height: 300px;
+  background-size: cover; }
+  .biography-wrapper .person h3 {
+    font-family: leaguegothic;
+    font-size: 4em;
+    padding: 15px; }
+  .biography-wrapper .person .bioArticleWrap {
+    margin: auto 15px 15px; }
+
+.biography-wrapper #geru {
+  text-align: right;
+  background-image: url("../../../dist/assets/images/bg_geru2.jpg");
+  background-position: left, center; }
+
+.biography-wrapper #meg, .biography-wrapper #chisei {
+  background: #0d030f; }
+
+.projects-wrapper {
+  height: 560px;
+  background: #332244; }
+  .projects-wrapper h2 {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size: 2em;
+    margin: 1em; }
+  .projects-wrapper .project {
+    width: 33%;
+    margin: auto;
+    float: left; }
+    .projects-wrapper .project h3 {
+      display: none; }
+    .projects-wrapper .project p {
+      display: none; }
+    .projects-wrapper .project img {
+      width: 100%; }
