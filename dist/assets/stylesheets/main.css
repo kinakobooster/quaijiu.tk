@@ -34,6 +34,13 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 main.is-ie8, main.is-ie9, main.is-ie10, main.is-ie11 {
   display: block; }
 
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box; }
+
 @font-face {
   font-family: 'leaguegothic';
   src: url("../fonts/leaguegothic-italic-webfont.eot");
@@ -52,12 +59,15 @@ header {
   background-color: #114; }
 
 h1 {
-  margin: auto; }
+  margin: auto;
+  width: 100%;
+  background-image: url("../../../dist/assets/images/header.jpg");
+  background-size: cover;
+  background-position: center; }
 
 .what-wrapper {
   background: #0d030f;
   color: #eee;
-  height: 300px;
   margin: auto; }
   .what-wrapper h2 {
     padding: 0.5em;
@@ -65,28 +75,42 @@ h1 {
     font-size: 3em;
     margin-bottom: 1em; }
   .what-wrapper p {
-    text-align: center; }
+    width: 100%;
+    padding: 2em;
+    text-align: center;
+    font-size: 1em;
+    letter-spacing: 3px; }
 
 .biography-wrapper h2 {
   display: none; }
 
 .biography-wrapper .person {
   height: 300px;
-  background-size: cover; }
+  background-size: cover;
+  position: relative; }
   .biography-wrapper .person h3 {
     font-family: leaguegothic;
     font-size: 4em;
     padding: 15px; }
   .biography-wrapper .person .bioArticleWrap {
-    margin: auto 15px 15px; }
+    padding: 15px;
+    position: absolute;
+    bottom: 0;
+    width: 100%; }
 
 .biography-wrapper #geru {
   text-align: right;
-  background-image: url("../../../dist/assets/images/bg_geru2.jpg");
-  background-position: left, center; }
+  background: url("../../../dist/assets/images/bg_geru2.jpg");
+  background-size: cover;
+  background-position: left,center; }
 
-.biography-wrapper #meg, .biography-wrapper #chisei {
-  background: #0d030f; }
+.biography-wrapper #meg {
+  background: url("../../../dist/assets/images/bg_meg.jpg");
+  background-size: cover;
+  background-position: right,center; }
+
+.biography-wrapper #chisei {
+  background: url("../../../dist/assets/images/bg_chisei.jpg"); }
 
 .projects-wrapper {
   height: 560px;
@@ -106,3 +130,11 @@ h1 {
       display: none; }
     .projects-wrapper .project img {
       width: 100%; }
+
+.location-wrapper {
+  height: 300px; }
+  .location-wrapper h2 {
+    font-family: 'Roboto';
+    text-align: center;
+    font-size: 2em;
+    color: 100, 100, 100, 50; }

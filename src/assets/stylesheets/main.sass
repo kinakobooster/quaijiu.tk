@@ -20,11 +20,14 @@ header
 
 h1
   margin: auto;
+  width: 100%
+  background-image: url("../../../dist/assets/images/header.jpg")
+  background-size: cover
+  background-position: center
 
 .what-wrapper
   background: #0d030f;
   color: #eee;
-  height: 300px;
   margin: auto;
   h2
     padding: 0.5em;
@@ -32,7 +35,11 @@ h1
     font-size: 3em;
     margin-bottom: 1em;
   p
+    width: 100%
+    padding: 2em
     text-align: center;
+    font-size: 1em
+    letter-spacing: 3px;
 
 
 .biography-wrapper
@@ -41,18 +48,29 @@ h1
   .person
     height: 300px;
     background-size: cover
+    position: relative
     h3
       font-family: leaguegothic
       font-size: 4em
       padding: 15px
     .bioArticleWrap
-      margin : auto 15px 15px
+      padding: 15px
+      position: absolute
+      bottom: 0
+      width: 100%
+
   #geru
     text-align: right;
-    background-image: url("../../../dist/assets/images/bg_geru2.jpg")
-    background-position: left, center;
-  #meg,#chisei
-    background: #0d030f
+    background: url("../../../dist/assets/images/bg_geru2.jpg")
+    background-size: cover
+    background-position: left,center
+  #meg
+    background: url("../../../dist/assets/images/bg_meg.jpg")
+    background-size: cover
+    background-position: right,center
+  #chisei
+    background: url('../../../dist/assets/images/bg_chisei.jpg')
+
 
 .projects-wrapper
   height: 560px;
@@ -72,3 +90,10 @@ h1
       display: none
     img
       width : 100%
+.location-wrapper
+      height: 300px
+      h2
+        font-family: 'Roboto';
+        text-align: center
+        font-size: 2em
+        color: (100,100,100,50)
