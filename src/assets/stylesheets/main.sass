@@ -20,55 +20,95 @@ header
 
 h1
   margin: auto;
+  width: 100%
+  background-image: url("../../../dist/assets/images/header.jpg")
+  background-size: cover
+  background-position: center
+h2
+  font-family: 'Roboto'
+  padding: 0.5em;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 1em;
+
+
+h3
+  font-family: leaguegothic
+  font-size: 4em
+  padding: 25px
 
 .what-wrapper
   background: #0d030f;
   color: #eee;
-  height: 300px;
   margin: auto;
-  h2
-    padding: 0.5em;
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 1em;
   p
+    width: 100%
+    padding: 2em
     text-align: center;
+    font-size: 1em
+    letter-spacing: 3px;
 
 
 .biography-wrapper
   h2
     display: none;
   .person
-    height: 300px;
+    height: 250px;
     background-size: cover
-    h3
-      font-family: leaguegothic
-      font-size: 4em
-      padding: 15px
+    background-position: left,center
+    position: relative
+
+
+
     .bioArticleWrap
-      margin : auto 15px 15px
+      position: absolute
+      bottom: 0
+      width: 100%
+      padding: 25px
+
   #geru
     text-align: right;
-    background-image: url("../../../dist/assets/images/bg_geru2.jpg")
-    background-position: left, center;
-  #meg,#chisei
-    background: #0d030f
+    background-image:  url("../../../dist/assets/images/bg_geru2.jpg")
+  #meg
+    background-image: url("../../../dist/assets/images/bg_meg.jpg")
+  #katasho
+    background-color: #503030
+    text-align: right
+  #chisei
+    background-image: url('../../../dist/assets/images/bg_chisei.jpg')
+
 
 .projects-wrapper
-  height: 560px;
-  background: #332244;
-  h2
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 2em;
-    margin: 1em;
-  .project
-    width: 33%
-    margin: auto
-    float: left
+  background: #0d0322
+  clear : both
+  .pjleft
+    width: 25%;
+    padding: 25px
+    float: left;
+    .project
+      width: 100%
+      padding: 5px
+      h3
+        display: none
+      p
+        display: none
+      img
+        width : 100%
+  .pjright
+    width: 75%
+    float: right
     h3
-      display: none
     p
-      display: none
-    img
-      width : 100%
+      padding: 25px
+
+.location-wrapper
+      clear: both
+      height: 300px
+      h2
+        font-family: 'Roboto'
+        text-align: center
+        font-size: 2em
+        color: (100,100,100,50)
+      #map
+        height: 250px
+        width: 100%
