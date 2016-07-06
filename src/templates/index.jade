@@ -3,7 +3,9 @@ head
 	meta(charset="utf-8")
 	title='EIFUKU CIPHER'
 	link(rel='stylesheet' type='text/css' href='dist/assets/stylesheets/main.css')
-body
+	script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBqMAzImohRxLilUyjjqk0FXUSUQ5G4hFA')
+	script(src='dist/assets/js/map.js')
+body(onload="initialize();")
 	header 
 		img(src="dist/assets/images/etahapi.png", alt="logo" height='120')
 	h1.resizeimage
@@ -40,21 +42,24 @@ body
 			p We are creative team in Eifuku
 		.projects-wrapper
 			h2 Projects	
-			.project
-				h3 Eternal Unknown Pleasures
-				img#unkn(src="dist/assets/images/project_unkn.png", alt="Unknown Pleasures")
-				p You can enjoy Unknown Pleasures etarnally...
-			.project
-				h3 You are DEAD
-				img(src="dist/assets/images/project_youaredead.png", alt="placeholder")
-				p Escape from poop
+			.pjleft
+				.project
+					h3 Eternal Unknown Pleasures
+					img#unkn(src="dist/assets/images/project_unkn.png", alt="Unknown Pleasures")
+					p You can enjoy Unknown Pleasures etarnally...
+				.project
+					h3 You are DEAD
+					img(src="dist/assets/images/project_youaredead.png", alt="placeholder")
+					p Escape from poop
+			.pjright
+				h3 aaa
+				p aaa
+					
 		.location-wrapper
 			h2 EIFUKU is Here
-			img(src='dist/assets/images/map.pmg')
 			p 8min from Shibuya
 			p 12min fron Shinjuku
-			p map 
-		.contact-wrapper
-			h2 Contact
-			p twitter / mail 
-		footer 
+			//#map map
+	footer
+		h2 Contact
+		p twitter / mail 

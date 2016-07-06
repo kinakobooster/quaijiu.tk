@@ -3,8 +3,10 @@
   <meta charset="utf-8">
   <title>EIFUKU CIPHER</title>
   <link rel="stylesheet" type="text/css" href="dist/assets/stylesheets/main.css">
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqMAzImohRxLilUyjjqk0FXUSUQ5G4hFA"></script>
+  <script src="dist/assets/js/map.js"></script>
 </head>
-<body>
+<body onload="initialize();">
   <header> <img src="dist/assets/images/etahapi.png" alt="logo" height="120"></header>
   <h1 class="resizeimage"><img src="dist/assets/images/header_letter.png" alt="EIFUKU CIPHER"></h1>
   <div class="content">
@@ -50,25 +52,30 @@
     </div>
     <div class="projects-wrapper">
       <h2>Projects	</h2>
-      <div class="project">
-        <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dist/assets/images/project_unkn.png" alt="Unknown Pleasures">
-        <p>You can enjoy Unknown Pleasures etarnally...</p>
+      <div class="pjleft">
+        <div class="project">
+          <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dist/assets/images/project_unkn.png" alt="Unknown Pleasures">
+          <p>You can enjoy Unknown Pleasures etarnally...</p>
+        </div>
+        <div class="project">
+          <h3>You are DEAD</h3><img src="dist/assets/images/project_youaredead.png" alt="placeholder">
+          <p>Escape from poop</p>
+        </div>
       </div>
-      <div class="project">
-        <h3>You are DEAD</h3><img src="dist/assets/images/project_youaredead.png" alt="placeholder">
-        <p>Escape from poop</p>
+      <div class="pjright">
+        <h3>aaa</h3>
+        <p>aaa</p>
       </div>
     </div>
     <div class="location-wrapper">
-      <h2>EIFUKU is Here</h2><img src="dist/assets/images/map.pmg">
+      <h2>EIFUKU is Here</h2>
       <p>8min from Shibuya</p>
       <p>12min fron Shinjuku</p>
-      <p>map </p>
+      <!--#map map-->
     </div>
-    <div class="contact-wrapper">
-      <h2>Contact</h2>
-      <p>twitter / mail </p>
-    </div>
-    <footer> </footer>
   </div>
+  <footer>
+    <h2>Contact</h2>
+    <p>twitter / mail </p>
+  </footer>
 </body>

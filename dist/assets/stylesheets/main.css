@@ -65,15 +65,22 @@ h1 {
   background-size: cover;
   background-position: center; }
 
+h2 {
+  font-family: 'Roboto';
+  padding: 0.5em;
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 1em; }
+
+h3 {
+  font-family: leaguegothic;
+  font-size: 4em;
+  padding: 25px; }
+
 .what-wrapper {
   background: #0d030f;
   color: #eee;
   margin: auto; }
-  .what-wrapper h2 {
-    padding: 0.5em;
-    text-align: center;
-    font-size: 3em;
-    margin-bottom: 1em; }
   .what-wrapper p {
     width: 100%;
     padding: 2em;
@@ -85,56 +92,60 @@ h1 {
   display: none; }
 
 .biography-wrapper .person {
-  height: 300px;
+  height: 250px;
   background-size: cover;
+  background-position: left,center;
   position: relative; }
-  .biography-wrapper .person h3 {
-    font-family: leaguegothic;
-    font-size: 4em;
-    padding: 15px; }
   .biography-wrapper .person .bioArticleWrap {
-    padding: 15px;
     position: absolute;
     bottom: 0;
-    width: 100%; }
+    width: 100%;
+    padding: 25px; }
 
 .biography-wrapper #geru {
   text-align: right;
-  background: url("../../../dist/assets/images/bg_geru2.jpg");
-  background-size: cover;
-  background-position: left,center; }
+  background-image: url("../../../dist/assets/images/bg_geru2.jpg"); }
 
 .biography-wrapper #meg {
-  background: url("../../../dist/assets/images/bg_meg.jpg");
-  background-size: cover;
-  background-position: right,center; }
+  background-image: url("../../../dist/assets/images/bg_meg.jpg"); }
+
+.biography-wrapper #katasho {
+  background-color: #503030;
+  text-align: right; }
 
 .biography-wrapper #chisei {
-  background: url("../../../dist/assets/images/bg_chisei.jpg"); }
+  background-image: url("../../../dist/assets/images/bg_chisei.jpg"); }
 
 .projects-wrapper {
-  height: 560px;
-  background: #332244; }
-  .projects-wrapper h2 {
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    font-size: 2em;
-    margin: 1em; }
-  .projects-wrapper .project {
-    width: 33%;
-    margin: auto;
+  background: #0d0322;
+  clear: both; }
+  .projects-wrapper .pjleft {
+    width: 25%;
+    padding: 25px;
     float: left; }
-    .projects-wrapper .project h3 {
-      display: none; }
-    .projects-wrapper .project p {
-      display: none; }
-    .projects-wrapper .project img {
-      width: 100%; }
+    .projects-wrapper .pjleft .project {
+      width: 100%;
+      padding: 5px; }
+      .projects-wrapper .pjleft .project h3 {
+        display: none; }
+      .projects-wrapper .pjleft .project p {
+        display: none; }
+      .projects-wrapper .pjleft .project img {
+        width: 100%; }
+  .projects-wrapper .pjright {
+    width: 75%;
+    float: right; }
+    .projects-wrapper .pjright p {
+      padding: 25px; }
 
 .location-wrapper {
+  clear: both;
   height: 300px; }
   .location-wrapper h2 {
     font-family: 'Roboto';
     text-align: center;
     font-size: 2em;
     color: 100, 100, 100, 50; }
+  .location-wrapper #map {
+    height: 250px;
+    width: 100%; }
