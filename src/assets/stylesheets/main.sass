@@ -24,23 +24,23 @@ h1
   background-image: url("../../../dist/assets/images/header.jpg")
   background-size: cover
   background-position: center
+
+
 h2
   font-family: 'Roboto'
   padding: 0.5em;
   text-align: center;
   font-size: 3em;
-  margin-bottom: 1em;
+  margin-bottom: 0.5em;
 
-a
-  text-decoration: none
-  color: #aaffff
-  background-color: #000000
-  display: inline-block
-  padding: 0.2em
+
 
 h3
   font-family: leaguegothic
-  font-size: 4em
+  font-size: 3em
+  transition: 0.2s
+  @media screen and (min-width: 960px)
+    font-size: 4em
   padding: 25px
 
 .what-wrapper
@@ -59,38 +59,86 @@ h3
   h2
     display: none;
   .person
-    height: 250px;
+    background-color:		rgba(0,0,0,0.5);
+    height: 150px
+    @media screen and (min-width: 960px)
+      height: 120px;
     background-size: cover
     background-position: left,center
+    overflow: hidden
     position: relative
+    transition: 0.5s
 
 
+
+    h3
+      display: inline-block
 
     .bioArticleWrap
+      transition: 0.5s
       position: absolute
-      bottom: 0
+      bottom: -200px
       width: 100%
       padding: 25px
+    h4
+      font-family: 'leaguegothic'
+      font-size: 2em
+      color: #ff1166
+    p
+      margin: auto
+    a
+      text-decoration: none
+      color: #aaccff
+      padding: 0.3em
+      background-color: #0d030f
+      letter-spacing: 0.15em
+      display: inline-block
+      transition: 0.5s
+    a:hover
+      transition: 0.2s
+      color: #ffffff
+      background: #aa0033
+
 
   #geru
     text-align: right;
     background-image:  url("../../../dist/assets/images/bg_geru2.jpg")
   #meg
     background-image: url("../../../dist/assets/images/bg_meg.jpg")
+    background-position: right center
   #katasho
     background-color: #503030
     text-align: right
+    background-position: right
   #chisei
+    text-align: left
     background-image: url('../../../dist/assets/images/bg_chisei.jpg')
+    background-position: right center
+
+  .person.active
+    height: 350px
+    @media screen and (min-width: 960px)
+      height: 250px
+    transition: 0.5s
+
+    h3
+      display: inline-block
+    .bioArticleWrap
+      transition: 0.5s
+      bottom: 0px
 
 
 .projects-wrapper
   background: #0d0322
-  clear : both
+  height : 400px
+  overflow-y: scroll
+  h2
+    font-size: 1em
   .pjleft
     width: 25%;
     padding: 25px
     float: left;
+    background-color: #0d0322
     .project
       width: 100%
       padding: 5px
@@ -101,11 +149,15 @@ h3
       img
         width : 100%
   .pjright
+    background-color: #0d0322
     width: 75%
     float: right
-    h3
     p
       padding: 25px
+    #cont1
+      display: block
+    #cont2
+      display: none
 
 .location-wrapper
       clear: both
