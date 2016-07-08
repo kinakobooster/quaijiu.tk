@@ -3,8 +3,8 @@ head
 	meta(charset="utf-8")
 	title='EIFUKU CIPHER'
 	link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
-	script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init")
-	
+	script(src='dest/assets/js/map.js')
+
 body
 	header 
 		img(src="dest/assets/images/etahapi.png", alt="logo" height='120')
@@ -73,6 +73,6 @@ body
 	.location-wrapper
 		h2 Contact
 		p mail : kado@nouk.in
-		
+
+script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init")
 script(src='dest/assets/js/app.js')
-script(src='dest/assets/js/map.js')

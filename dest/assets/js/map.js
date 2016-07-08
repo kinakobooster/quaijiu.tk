@@ -1,4 +1,4 @@
-(function () {
+function init() {
   var latlng = new google.maps.LatLng(35.676272,139.6404296);
   var myOptions = {
     zoom: 12,
@@ -28,4 +28,4 @@
 	var type = new google.maps.StyledMapType(styleOptions, styledMapOptions);
 	map.mapTypes.set('eifuku', type);
 	map.setMapTypeId('eifuku');
-})();
+};
