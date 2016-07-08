@@ -2275,4 +2275,4 @@ tabs[1].click(function () {
 $(".person").click(function () {
   $(this).toggleClass('active');
 });
-//# sourceMappingURL=all.js.map
+//# sourceMappingURL=app.js.map

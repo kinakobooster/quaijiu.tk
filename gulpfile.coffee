@@ -26,7 +26,7 @@ paths =
   src:
     jade:      ["#{SRC}/jade/**/*.jade", "!#{SRC}/jade/**/_*.jade"]
     sass:      ["#{SRC}/sass/**/*.sass"]
-    js:        ["#{SRC}/js/**/*.js"]
+    js:        [ "#{SRC}/js/common/lib/*.js", "#{SRC}/js/common/lib/*.min.js", "#{SRC}/js/**/*.js"]
   dest:
     js:        "#{DEST}/assets/js"
     html:      './'
@@ -62,7 +62,7 @@ gulp.task 'script', ->
     errorHandler: notify.onError('<%= error.message %>')
   .pipe sourcemaps.init()
   .pipe babel(presets: [ 'es2015' ])
-  .pipe concat('all.js')
+  .pipe concat('app.js')
   .pipe sourcemaps.write('.')
   .pipe gulp.dest paths.dest.js
   .pipe browserSync.reload
@@ -97,6 +97,8 @@ gulp.task 'watch', ->
     gulp.start ['sass']
   watch paths.src.jade, ->
     gulp.start ['jade']
+  watch paths.src.jade, ->
+    gulp.start ['script']
 
 gulp.task 'init', ['bower']
 
