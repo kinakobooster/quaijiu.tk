@@ -3,7 +3,9 @@ head
 	meta(charset="utf-8")
 	title='EIFUKU CIPHER'
 	link(rel='stylesheet' type='text/css' href='dist/assets/stylesheets/main.css')
-
+		
+	script(src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js")
+		
 
 	
 body
@@ -32,27 +34,37 @@ body
 						a(href="http://twitter.com/kinakobooster" color='#cccccc') twitter
 						|  / 
 						a(href="http://noubrain.hateblo.jp") blog
+			.person#katasho(data-speed='18', data-type='background')
+				h3 A
+				.bioArticleWrap
+					h4 Squid
+					p Splatoon
 			.person#chisei(data-speed='18', data-type='background')
 				h3 Chisei
 				.bioArticleWrap
-					p Beard dragon
+					h4 Beard dragon
 					p Static on the rock
 		.what-wrapper
 			p We are creative team in Eifuku
 		.projects-wrapper
 			h2 Projects	
 			.pjleft
-				.project
+				.project#tab1
 					h3 Eternal Unknown Pleasures
 					img#unkn(src="dist/assets/images/project_unkn.png", alt="Unknown Pleasures")
-					p You can enjoy Unknown Pleasures etarnally...
-				.project
+					p 
+				.project#tab2
 					h3 You are DEAD
 					img(src="dist/assets/images/project_youaredead.png", alt="placeholder")
 					p Escape from poop
 			.pjright
-				p Eternal Unknown Pleasures
-				p You are DEAD 💩
+				#cont1
+					h3 Eternal Unknown Pleasures
+					p You can enjoy Unknown Pleasures etarnally...
+				#cont2
+					h3 You are DEAD 💩
+					p Escape from poop
+					p Death is inevitable
 					
 		.location-wrapper
 			h2 EIFUKU is Here
@@ -62,3 +74,5 @@ body
 	.location-wrapper
 		h2 Contact
 		p mail : kado@nouk.in
+		
+script(src='dist/assets/js/script.js')

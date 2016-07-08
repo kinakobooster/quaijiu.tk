@@ -3,10 +3,9 @@
   <meta charset="utf-8">
   <title>EIFUKU CIPHER</title>
   <link rel="stylesheet" type="text/css" href="dist/assets/stylesheets/main.css">
-  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBqMAzImohRxLilUyjjqk0FXUSUQ5G4hFA"></script>
-  <script src="dist/assets/js/map.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 </head>
-<body onload="initialize();">
+<body>
   <header> <img src="dist/assets/images/etahapi.png" alt="logo" height="120"></header>
   <h1 class="resizeimage"><img src="dist/assets/images/header_letter.png" alt="EIFUKU CIPHER"></h1>
   <div class="content">
@@ -15,34 +14,34 @@
     </div>
     <div class="biography-wrapper">
       <h2>Biography</h2>
-      <div id="geru" class="person">
+      <div id="geru" data-speed="6" data-type="background" class="person">
         <h3>Kyoko kadowaki a.k.a geruge</h3>
         <div class="bioArticleWrap">
-          <p>Engineer</p>
+          <h4>Engineer</h4>
           <p>DJ / MC / Mathematics</p>
           <p><a href="http://kdxu.github.io">website</a></p>
         </div>
       </div>
-      <div id="meg" class="person">
+      <div id="meg" data-speed="16" data-type="background" class="person">
         <h3>Megumi Torii a.k.a kinakobooster</h3>
         <div class="bioArticleWrap">
-          <p>Designer</p>
+          <h4>Designer</h4>
           <p>Tanka / Sclupture / Religious studies</p>
           <p><a href="http://twitter.com/kinakobooster" color="#cccccc">twitter</a> / <a href="http://noubrain.hateblo.jp">blog</a></p>
         </div>
       </div>
-      <div id="katasho" class="person">
-        <h3>Katasho a.k.a. "a"</h3>
+      <div id="katasho" data-speed="18" data-type="background" class="person">
+        <h3>A</h3>
         <div class="bioArticleWrap">
-          <p>Squid</p>
+          <h4>Squid</h4>
           <p>Splatoon</p>
         </div>
       </div>
-      <div id="chisei" class="person">
+      <div id="chisei" data-speed="18" data-type="background" class="person">
         <h3>Chisei</h3>
         <div class="bioArticleWrap">
-          <p>Beard dragon</p>
-          <p>Static on the rock / Mental health</p>
+          <h4>Beard dragon</h4>
+          <p>Static on the rock</p>
         </div>
       </div>
     </div>
@@ -52,25 +51,31 @@
     <div class="projects-wrapper">
       <h2>Projects	</h2>
       <div class="pjleft">
-        <div class="project">
+        <div id="tab1" class="project">
           <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dist/assets/images/project_unkn.png" alt="Unknown Pleasures">
-          <p>You can enjoy Unknown Pleasures etarnally...</p>
+          <p> </p>
         </div>
-        <div class="project">
+        <div id="tab2" class="project">
           <h3>You are DEAD</h3><img src="dist/assets/images/project_youaredead.png" alt="placeholder">
           <p>Escape from poop</p>
         </div>
       </div>
       <div class="pjright">
-        <p>Eternal Unknown Pleasures</p>
-        <p>You are DEAD 💩</p>
+        <div id="cont1">
+          <h3>Eternal Unknown Pleasures</h3>
+          <p>You can enjoy Unknown Pleasures etarnally...</p>
+        </div>
+        <div id="cont2">
+          <h3>You are DEAD 💩</h3>
+          <p>Escape from poop</p>
+          <p>Death is inevitable</p>
+        </div>
       </div>
     </div>
     <div class="location-wrapper">
       <h2>EIFUKU is Here</h2>
       <p>8min from Shibuya</p>
       <p>12min fron Shinjuku</p>
-      <!--#map map-->
     </div>
   </div>
   <footer></footer>
@@ -79,3 +84,4 @@
     <p>mail : kado@nouk.in</p>
   </div>
 </body>
+<script src="dist/assets/js/pjmenu.js"></script>
