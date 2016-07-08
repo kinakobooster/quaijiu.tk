@@ -12,10 +12,15 @@ jade          = require 'gulp-jade'
 babel         = require 'gulp-babel'
 concat        = require 'gulp-concat'
 sourcemaps    = require 'gulp-sourcemaps'
+bower         = require 'main-bower-files'
+filter        = require 'gulp-filter'
+exec          = require('child_process').exec
 
 
 DEST  = './dest'
 SRC   = './src'
+BOWER_COMPONENTS = './bower_components'
+BOWER_INSTALL_DIR_BASE = '/common'
 
 paths =
   src:
@@ -28,7 +33,6 @@ paths =
     css:       "#{DEST}/assets/stylesheets"
 
 bourbon.with './src/sass/application'
-
 
 gulp.task 'sass', ->
   gulp.src paths.src.sass
@@ -64,6 +68,25 @@ gulp.task 'script', ->
   .pipe browserSync.reload
       stream: true
 
+gulp.task 'bower', ->
+  console.log 'install bower components'
+  exec 'bower install', (err, stdout, stderr)->
+    if err
+      console.log err
+    else
+      console.log stdout
+      jsFilter = filter('**/*.js',{restore: true})
+      gulp.src bower
+        debugging: true
+        includeDev: true
+        paths:
+          bowerDirectory: BOWER_COMPONENTS
+          bowerJson: 'bower.json'
+      .pipe plumber errorHandler: notify.onError('<%= error.message %>')
+      .pipe jsFilter
+      .pipe gulp.dest "#{SRC}/js/common/lib"
+      .pipe jsFilter.restore
+
 gulp.task 'browser-sync', ->
   browserSync.init null,
     server: './'
@@ -74,5 +97,7 @@ gulp.task 'watch', ->
     gulp.start ['sass']
   watch paths.src.jade, ->
     gulp.start ['jade']
+
+gulp.task 'init', ['bower']
 
 gulp.task 'default', ['sass', 'jade', 'script', 'browser-sync', 'watch']

@@ -36,9 +36,9 @@
     "gulp-watch": "^4.2.4",
     "node-bourbon": "^4.2.1-beta1",
     "node-sass": "^3.8.0",
-    "vinyl-source-stream": "^1.1.0"
+    "vinyl-source-stream": "^1.1.0",
+    "main-bower-files": ">=2.0.0",
+    "gulp-filter": ">=1.0.0"
   },
-  "dependencies": {
-    "bootstrap-sass": "^3.3.4"
-  }
+  "dependencies": {}
 }
