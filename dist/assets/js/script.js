@@ -12,7 +12,7 @@ $("#tab2").click(function(){
   $("#cont1").hide();
   $("#cont2").show();
   $("#tab1").css("background-color", "#0d0322")
-  $("#tab2").css("background-color", "#ff3366")
+  $("#tab2").css("background-color", "#0d030f")
 });
 
 $(".person").click(function(){
