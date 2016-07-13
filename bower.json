@@ -11,7 +11,7 @@
   ],
   "devDependencies": {
     "jquery": "1.11.0",
-    "jquery.easing": "~1.3.1"
+    "Processing.js": "1.4.18"
   },
   "overrides": {
     "jquery": {
@@ -19,9 +19,9 @@
         "js/dist/jquery.min.js"
       ]
     },
-    "jquery.easing": {
+    "Processing.js": {
       "main": [
-        "js/jquery.easing.min.js"
+        "js/dist/processing.min.js"
       ]
     }
   }
