@@ -10,18 +10,12 @@
     "bower_components"
   ],
   "devDependencies": {
-    "jquery": "1.11.0",
-    "Processing.js": "1.4.18"
-  },
+    "jquery": "1.11.0"
+    },
   "overrides": {
     "jquery": {
       "main": [
         "js/dist/jquery.min.js"
-      ]
-    },
-    "Processing.js": {
-      "main": [
-        "js/dist/processing.min.js"
       ]
     }
   }
