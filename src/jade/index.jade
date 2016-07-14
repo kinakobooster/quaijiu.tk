@@ -1,11 +1,12 @@
 doctype html
+html(ng-app='App' lang="en")
 head
 	meta(charset="utf-8")
 	title='EIFUKU CIPHER'
 	link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
 	script(src='dest/assets/js/map.js')
 
-body
+body(ng-controller="AppController")
 	header 
 		img(src="dest/assets/images/etahapi.png", alt="logo" height='120')
 	h1.resizeimage
