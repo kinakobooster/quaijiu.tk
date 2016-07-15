@@ -10,8 +10,17 @@ head
 	script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
 	
 body
-	header 
-		img(src="dest/assets/images/etahapi.png", alt="logo" height='120')
+	header
+		img(src="dest/assets/images/etahapi.png", alt="logo" height='60')
+		ul
+			li
+				a(href="#/biography") biography
+			li 
+				a(href="#/projects") projects
+			li 
+				a(href="#/map") access
+			li 
+				a(href="#/contacts") contacts
 	.content
 		div(ng-view)
 	footer
