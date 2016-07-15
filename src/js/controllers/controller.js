@@ -13,7 +13,7 @@ app.config(($routeProvider) =>(
                     templateUrl : 'dest/assets/templates/pages/projects.html',
                     controller : 'pjController'
                 })
-                .when('/access',{
+                .when('/map',{
                     templateUrl : 'dest/assets/templates/pages/map.html',
                     controller : 'mapController'
                 })

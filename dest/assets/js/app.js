@@ -35,7 +35,7 @@ app.config(function ($routeProvider) {
     }).when('/projects', {
         templateUrl: 'dest/assets/templates/pages/projects.html',
         controller: 'pjController'
-    }).when('/access', {
+    }).when('/map', {
         templateUrl: 'dest/assets/templates/pages/map.html',
         controller: 'mapController'
     }).otherwise({
