@@ -24,12 +24,14 @@ BOWER_INSTALL_DIR_BASE = '/common'
 
 paths =
   src:
-    jade:      ["#{SRC}/jade/**/*.jade", "!#{SRC}/jade/**/_*.jade"]
+    jade:      ["#{SRC}/jade/pages/**/*.jade", "!#{SRC}/jade/pages/**/_*.jade"]
+    index:     ["#{SRC}/jade/index.jade"]
     sass:      ["#{SRC}/sass/**/*.sass"]
     js:        [ "#{SRC}/js/common/lib/*.js", "#{SRC}/js/common/lib/*.min.js", "#{SRC}/js/**/*.js"]
   dest:
     js:        "#{DEST}/assets/js"
-    html:      './'
+    html:      "#{DEST}/assets/templates/pages"
+    index:     "./"
     css:       "#{DEST}/assets/stylesheets"
 
 bourbon.with './src/sass/application'
@@ -43,6 +45,16 @@ gulp.task 'sass', ->
       includePaths: bourbon.includePaths
     .pipe sourcemaps.write()
     .pipe gulp.dest paths.dest.css
+    .pipe browserSync.reload
+      stream: true
+
+gulp.task 'index', ->
+  gulp.src paths.src.index
+    .pipe plumber
+      errorHandler: notify.onError('<%= error.message %>')
+    .pipe jade
+      pretty: true
+    .pipe gulp.dest paths.dest.index
     .pipe browserSync.reload
       stream: true
 
@@ -68,25 +80,6 @@ gulp.task 'script', ->
   .pipe browserSync.reload
       stream: true
 
-gulp.task 'bower', ->
-  console.log 'install bower components'
-  exec 'bower install', (err, stdout, stderr)->
-    if err
-      console.log err
-    else
-      console.log stdout
-      jsFilter = filter('**/*.js',{restore: true})
-      gulp.src bower
-        debugging: true
-        includeDev: true
-        paths:
-          bowerDirectory: BOWER_COMPONENTS
-          bowerJson: 'bower.json'
-      .pipe plumber errorHandler: notify.onError('<%= error.message %>')
-      .pipe jsFilter
-      .pipe gulp.dest "#{SRC}/js/common/lib"
-      .pipe jsFilter.restore
-
 gulp.task 'browser-sync', ->
   browserSync.init null,
     server: './'
@@ -97,9 +90,9 @@ gulp.task 'watch', ->
     gulp.start ['sass']
   watch paths.src.jade, ->
     gulp.start ['jade']
+  watch paths.src.index, ->
+    gulp.start ['index']
   watch paths.src.jade, ->
     gulp.start ['script']
 
-gulp.task 'init', ['bower']
-
-gulp.task 'default', ['sass', 'jade', 'script', 'browser-sync', 'watch']
+gulp.task 'default', ['sass', 'index', 'jade', 'script', 'browser-sync', 'watch']
