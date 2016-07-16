@@ -6,6 +6,28 @@
   src: url('../fonts/leaguegothic-italic-webfont.eot?iefix') format("eot"), url('../fonts/leaguegothic-italic-webfont.woff') format("woff"), url('../fonts/leaguegothic-italic-webfont.ttf') format("truetype"), url('../fonts/leaguegothic-italic-webfont.svg#webfontjSpbZQRv') format("svg")
 
 
+input[type="checkbox"].bellows
+  display: none
+
+input[type="checkbox"].bellows + .person
+    height: 150px
+    @media screen and (min-width: 960px)
+      height: 120px;
+    overflow: hidden;
+    .bioArticleWrap
+      bottom: -200px
+
+
+input[type="checkbox"].bellows:checked + .person
+    height: 250px
+    @media screen and (min-width: 960px)
+      height: 220px
+    h3
+      display: inline-block
+    .bioArticleWrap
+      bottom: 0px
+
+
 .resizeimage img
   width: 100%
 
@@ -90,27 +112,34 @@ h3
     font-size: 1em
     letter-spacing: 3px;
 
-
 .biography-wrapper
   h2
-    display: none
+    display: none;
   .person
-    background-color:		rgba(0,0,0,0.5)
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    background-color:		rgba(0,0,0,0.5);
     height: 150px
     @media screen and (min-width: 960px)
-      height: 160px
+      height: 120px;
     background-size: cover
     background-position: left,center
     overflow: hidden
     position: relative
-    transition: height 0.5s ease
-    -webkit-transition: height 0.5s ease
 
     h3
       display: inline-block
 
     .bioArticleWrap
-      transition: 0.5s
+      -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      transition: all 0.5s;
       position: absolute
       bottom: -200px
       width: 100%
@@ -150,11 +179,9 @@ h3
     background-image: url('../../../dest/assets/images/bg_chisei.jpg')
     background-position: right center
 
-  h3
-      display: inline-block
-  .bioArticleWrap
-      transition: 0.5s
-      bottom: 0px
+
+
+
 
 
 .projects-wrapper
@@ -199,7 +226,7 @@ h3
 
 .footer-wrapper
       clear: both
-      height: 300px
+      height: 50px
       padding: 2em
       h2
         font-family: 'Roboto'
