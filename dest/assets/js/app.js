@@ -1,27 +1,3 @@
-"use strict";
-
-var tabs = [$("#tab1"), $("#tab2")];
-var conts = [$("#cont1"), $("#cont2")];
-
-tabs[0].click(function () {
-  conts[0].show();
-  conts[1].hide();
-
-  // switch tab color
-  tabs[0].css("background-color", "#0d0322");
-  tabs[1].css("background-color", "#0d030f");
-});
-
-tabs[1].click(function () {
-  conts[1].show();
-  conts[0].hide();
-  tabs[1].css("background-color", "#0d0322");
-  tabs[0].css("background-color", "#0d030f");
-});
-
-$(".person").click(function () {
-  $(this).toggleClass('active');
-});
 'use strict';
 
 function init() {
@@ -51,6 +27,7 @@ function init() {
 'use strict';
 
 var app = angular.module('App', ['ngRoute', 'ngAnimate']);
+
 app.config(function ($routeProvider) {
     return $routeProvider.when('/', {
         templateUrl: 'dest/assets/templates/pages/main.html',
@@ -64,20 +41,87 @@ app.config(function ($routeProvider) {
     }).when('/map', {
         templateUrl: 'dest/assets/templates/pages/map.html',
         controller: 'mapController'
+    }).when('/contact', {
+        templateUrl: 'dest/assets/templates/pages/contact.html',
+        controller: 'contactController'
     }).otherwise({
         redirectTo: '/'
     });
 });
 
-app.controller('mainController', function ($scope) {});
+app.directive('slideable', function () {
+    return {
+        restrict: 'C',
+        compile: function compile(element, attr) {
+            // wrap tag
+            var contents = element.html();
+            element.html('<div class="slideable_content" style="margin:0 !important; padding:0 !important" >' + contents + '</div>');
+
+            return function postLink(scope, element, attrs) {
+                // default properties
+                attrs.duration = !attrs.duration ? '1s' : attrs.duration;
+                attrs.easing = !attrs.easing ? 'ease-in-out' : attrs.easing;
+                element.css({
+                    'overflow': 'hidden',
+                    'height': '0px',
+                    'transitionProperty': 'height',
+                    'transitionDuration': attrs.duration,
+                    'transitionTimingFunction': attrs.easing
+                });
+            };
+        }
+    };
+}).directive('slideToggle', function () {
+    return {
+        restrict: 'A',
+        link: function link(scope, element, attrs) {
+            var target, content;
+
+            attrs.expanded = false;
+
+            element.bind('click', function () {
+                if (!target) target = document.querySelector(attrs.slideToggle);
+                if (!content) content = target.querySelector('.slideable_content');
+
+                if (!attrs.expanded) {
+                    content.style.border = '1px solid rgba(0,0,0,0)';
+                    var y = content.clientHeight;
+                    content.style.border = 0;
+                    target.style.height = y + 'px';
+                } else {
+                    target.style.height = '0px';
+                }
+                attrs.expanded = !attrs.expanded;
+            });
+        }
+    };
+});
+
+app.controller('contactController', ['$scope', function ($scope) {}]);
+
+app.controller('mainController', ['$scope', function ($scope) {}]);
+
 app.controller('bioController', ['$scope', function ($scope) {
-    $scope.expand = function () {
-        console.log("aaa");
-        $(undefined).toggleClass('active');
+    $scope.flags = [false, false, false, false];
+    $scope.open = function (i) {
+        console.log(i);
+        $scope.flags[i] = !$scope.flags[i];
     };
 }]);
 
-app.controller('pjController', function ($scope) {});
+app.controller('pjController', ['$scope', function ($scope) {
+    $scope.pShow = [true, false];
+    $scope.open = function (b) {
+        if (b) {
+            $scope.pShow[0] = true;
+            $scope.pShow[1] = false;
+        } else {
+            $scope.pShow[1] = true;
+            $scope.pShow[0] = false;
+        }
+    };
+}]);
+
 app.controller('mapController', function ($scope) {
     init();
 });
