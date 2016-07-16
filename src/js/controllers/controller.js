@@ -1,4 +1,4 @@
-const app = angular.module('App', ['ngRoute']);
+const app = angular.module('App', ['ngRoute', 'ngAnimate']);
 app.config(($routeProvider) =>(
             $routeProvider
                 .when('/',{
@@ -32,4 +32,6 @@ app.controller('bioController', ['$scope',($scope) => {
 }])
 
 app.controller('pjController', ($scope) => {})
-app.controller('mapController', ($scope) => {})
+app.controller('mapController', ($scope) => {
+  init();
+})

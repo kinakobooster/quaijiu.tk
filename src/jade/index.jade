@@ -6,15 +6,16 @@ head
 	link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
 	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js")
 	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js")
-	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-animate.min.js")
-	script(src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js")
+	script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js")
 	
 body
 	header
-		img(src="dest/assets/images/etahapi.png", alt="logo" height='60')
+		a(href="#/") 
+			img(src="dest/assets/images/etahapi.png", alt="logo" height='60')
 		ul
 			li
-				a(href="#/biography") biography
+				a(ng-href="#/biography") biography
 			li 
 				a(href="#/projects") projects
 			li 
@@ -23,8 +24,5 @@ body
 				a(href="#/contacts") contacts
 	.content
 		div(ng-view)
-	footer
-		.footer-wrapper
-			h2 Contact
-			p mail : kado@nouk.in
+script(async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init")
 script(src='dest/assets/js/app.js')

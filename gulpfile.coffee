@@ -27,7 +27,7 @@ paths =
     jade:      ["#{SRC}/jade/pages/**/*.jade", "!#{SRC}/jade/pages/**/_*.jade"]
     index:     ["#{SRC}/jade/index.jade"]
     sass:      ["#{SRC}/sass/**/*.sass"]
-    js:        [ "#{SRC}/js/common/lib/*.js", "#{SRC}/js/common/lib/*.min.js", "#{SRC}/js/**/*.js"]
+    js:        ["#{SRC}/js/**/*.js"]
   dest:
     js:        "#{DEST}/assets/js"
     html:      "#{DEST}/assets/templates/pages"
@@ -92,7 +92,7 @@ gulp.task 'watch', ->
     gulp.start ['jade']
   watch paths.src.index, ->
     gulp.start ['index']
-  watch paths.src.jade, ->
+  watch paths.src.js, ->
     gulp.start ['script']
 
 gulp.task 'default', ['sass', 'index', 'jade', 'script', 'browser-sync', 'watch']

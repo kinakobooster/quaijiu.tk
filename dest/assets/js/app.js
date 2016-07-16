@@ -24,7 +24,33 @@ $(".person").click(function () {
 });
 'use strict';
 
-var app = angular.module('App', ['ngRoute']);
+function init() {
+  var latlng = new google.maps.LatLng(35.676272, 139.6404296);
+  var myOptions = {
+    zoom: 12,
+    center: latlng,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  var map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+  var styledMapOptions = { name: 'EIFUKU' };
+
+  var styleOptions = [{
+    "stylers": [{ "invert_lightness": true }, { "hue": "#003bff" }]
+  }];
+
+  var markerOptions = {
+    position: latlng,
+    map: map
+  };
+  var marker = new google.maps.Marker(markerOptions);
+  var type = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+  map.mapTypes.set('eifuku', type);
+  map.setMapTypeId('eifuku');
+};
+'use strict';
+
+var app = angular.module('App', ['ngRoute', 'ngAnimate']);
 app.config(function ($routeProvider) {
     return $routeProvider.when('/', {
         templateUrl: 'dest/assets/templates/pages/main.html',
@@ -52,5 +78,7 @@ app.controller('bioController', ['$scope', function ($scope) {
 }]);
 
 app.controller('pjController', function ($scope) {});
-app.controller('mapController', function ($scope) {});
+app.controller('mapController', function ($scope) {
+    init();
+});
 //# sourceMappingURL=app.js.map
