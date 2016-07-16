@@ -26,22 +26,31 @@ $(".person").click(function () {
 
 var app = angular.module('App', ['ngRoute']);
 app.config(function ($routeProvider) {
-  return $routeProvider.when('/', {
-    templateUrl: 'dest/assets/templates/pages/main.html',
-    controller: 'mainController'
-  }).when('/biography', {
-    templateUrl: 'dest/assets/templates/pages/biography.html',
-    controller: 'bioController'
-  }).otherwise({
-    redirectTo: '/'
-  });
+    return $routeProvider.when('/', {
+        templateUrl: 'dest/assets/templates/pages/main.html',
+        controller: 'mainController'
+    }).when('/biography', {
+        templateUrl: 'dest/assets/templates/pages/biography.html',
+        controller: 'bioController'
+    }).when('/projects', {
+        templateUrl: 'dest/assets/templates/pages/projects.html',
+        controller: 'pjController'
+    }).when('/map', {
+        templateUrl: 'dest/assets/templates/pages/map.html',
+        controller: 'mapController'
+    }).otherwise({
+        redirectTo: '/'
+    });
 });
 
 app.controller('mainController', function ($scope) {});
 app.controller('bioController', ['$scope', function ($scope) {
-  $scope.expand = function () {
-    console.log("aaa");
-    $(undefined).toggleClass('active');
-  };
+    $scope.expand = function () {
+        console.log("aaa");
+        $(undefined).toggleClass('active');
+    };
 }]);
+
+app.controller('pjController', function ($scope) {});
+app.controller('mapController', function ($scope) {});
 //# sourceMappingURL=app.js.map

@@ -9,6 +9,14 @@ app.config(($routeProvider) =>(
                     templateUrl : 'dest/assets/templates/pages/biography.html',
                     controller : 'bioController'
                 })
+                .when('/projects',{
+                    templateUrl : 'dest/assets/templates/pages/projects.html',
+                    controller : 'pjController'
+                })
+                .when('/map',{
+                    templateUrl : 'dest/assets/templates/pages/map.html',
+                    controller : 'mapController'
+                })
                 .otherwise({
                   redirectTo: '/'
                 })
@@ -22,3 +30,6 @@ app.controller('bioController', ['$scope',($scope) => {
     $(this).toggleClass('active')
   }
 }])
+
+app.controller('pjController', ($scope) => {})
+app.controller('mapController', ($scope) => {})
