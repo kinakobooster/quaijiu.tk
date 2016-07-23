@@ -4,21 +4,22 @@
   <meta charset="utf-8">
   <title>EIFUKU CIPHER</title>
   <link rel="stylesheet" type="text/css" href="dest/assets/stylesheets/main.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-route.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.6/angular-animate.min.js"></script>
+  <script src="dest/assets/js/processing.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
+  <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
 </head>
 <body>
-  <header><a href="#/"> <img src="dest/assets/images/etahapi.png" alt="logo" height="60"></a>
+  <header><a ui-sref="/"> <img src="dest/assets/images/etahapi.png" alt="logo" height="60"></a>
     <ul>
-      <li><a ng-href="#/biography">biography</a></li>
-      <li> <a href="#/projects">projects</a></li>
-      <li> <a href="#/map">access</a></li>
-      <li> <a href="#/contact">contacts</a></li>
+      <li><a ui-sref="biography">biography</a></li>
+      <li> <a ui-sref="projects">projects</a></li>
+      <li> <a ui-sref="map">access</a></li>
+      <li> <a ui-sref="contact">contact</a></li>
     </ul>
   </header>
   <div class="content">
-    <div ng-view></div>
+    <div ui-view></div>
   </div>
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>

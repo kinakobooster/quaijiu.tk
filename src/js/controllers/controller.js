@@ -1,51 +1,85 @@
-const app = angular.module('App', ['ngRoute', 'ngAnimate']);
+function init(){
 
-app.config(($routeProvider) =>(
-            $routeProvider
-                .when('/',{
+};
+
+const app = angular.module('App', ['ui.router']);
+
+app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+            $locationProvider.html5Mode({
+                enabled: true,
+                requireBase: false
+              })
+            $urlRouterProvider.otherwise("/")
+            $stateProvider
+                .state('/',{
+                    url: '/',
                     templateUrl : 'dest/assets/templates/pages/main.html',
-                    controller : 'mainController'
+                    controller: ($scope) => {
+
+                    }
                 })
-                .when('/biography',{
+                .state('biography',{
+                    url: '/biography',
                     templateUrl : 'dest/assets/templates/pages/biography.html',
-                    controller : 'bioController'
+                    controller: ($scope) => {
+
+                    }
                 })
-                .when('/projects',{
+                .state('projects',{
+                    url: '/projects',
                     templateUrl : 'dest/assets/templates/pages/projects.html',
-                    controller : 'pjController'
+                    controller: ($scope) => {
+                      $scope.pShow = [true,false];
+                      $scope.open = function(b){
+                          $scope.pShow[0] = b;
+                          $scope.pShow[1] = !b;
+                        };
+                    }
                 })
-                .when('/map',{
+                .state('map',{
+                    url: '/map',
                     templateUrl : 'dest/assets/templates/pages/map.html',
-                    controller : 'mapController'
+                    controller: ($scope) => {
+                      const latlng = new google.maps.LatLng(35.676272,139.6404296);
+                      const myOptions = {
+                        zoom: 12,
+                        center: latlng,
+                        mapTypeId: google.maps.MapTypeId.ROADMAP
+                      };
+                      const map = new google.maps.Map(document.getElementById('map'), myOptions);
+
+                      const styledMapOptions = { name: 'EIFUKU' }
+
+                      const styleOptions = [
+                      {
+                        "stylers": [
+                          { "invert_lightness": true },
+                          { "hue": "#003bff" }
+                        ]
+                      }
+                      ]
+
+                      const markerOptions = {
+                        position: latlng,
+                        map: map,
+                      };
+                      var marker = new google.maps.Marker(markerOptions);
+                      var type = new google.maps.StyledMapType(styleOptions, styledMapOptions);
+                      map.mapTypes.set('eifuku', type);
+                      map.setMapTypeId('eifuku');
+                    }
                 })
-                .when('/contact',{
+                .state('contact',{
+                    url: '/contact',
                     templateUrl : 'dest/assets/templates/pages/contact.html',
-                    controller : 'contactController'
+                    controller: ($scope) => {
+                    }
                 })
-                .otherwise({
-                  redirectTo: '/'
-                })
-							)
-)
+                .state('poop',{
+                    url: 'projects/poop',
+                    templateUrl : 'dest/assets/templates/pages/pj_poop.html',
+                    controller: ($scope) => {
 
-app.controller('contactController', ['$scope',($scope) => {
-}])
-
-app.controller('mainController', ['$scope',($scope) => {
-}])
-
-app.controller('bioController', ['$scope',($scope) => {
-
-}])
-
-app.controller('pjController', ['$scope',($scope) => {
-  $scope.pShow = [true,false];
-  $scope.open = function(b){
-      $scope.pShow[0] = b;
-      $scope.pShow[1] = !b;
-    };
-}])
-
-app.controller('mapController', ($scope) => {
-  init();
-})
+                    }
+                });
+							});
