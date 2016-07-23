@@ -1,19 +1,19 @@
-.projects-wrapper
-	h2 Projects	
-	.pjleft
-		.project(ng-click="open(true)")
-			h3 Eternal Unknown Pleasures
-			img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures")
-			p 
-		.project(ng-click="open(false)")
-			h3 You are DEAD
-			img(src="dest/assets/images/project_youaredead.png", alt="placeholder")
-			p Escape from poop
-	.pjright
-		div(ng-show="pShow[0]")
-			h3 Eternal Unknown Pleasures
-			p You can enjoy Unknown Pleasures etarnally...
-		div(ng-show="pShow[1]")
-			h3 You are DEAD 💩
-			p Escape from poop
-			p Death is inevitable
+ui-view
+	.projects-wrapper
+		h2 Projects	
+		.pjleft
+			.project(ng-click="open(true)")
+				h3 Eternal Unknown Pleasures
+				img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures")
+				p 
+			.project(ng-click="open(false)")
+				h3 You are DEAD
+				img(src="dest/assets/images/project_youaredead.png", alt="placeholder")
+				p Escape from poop
+		.pjright
+			div(ng-repeat="p in projects")
+				div(ng-show="pShow[$index]")
+					h3 {{p.title}}
+					p {{p.detail}}
+					p 
+						a(ui-sref="projects.detail({projectId:p.id})") Show Detail

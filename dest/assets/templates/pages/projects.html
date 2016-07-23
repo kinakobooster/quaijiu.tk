@@ -1,25 +1,25 @@
 
-<div class="projects-wrapper">
-  <h2>Projects	</h2>
-  <div class="pjleft">
-    <div ng-click="open(true)" class="project">
-      <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dest/assets/images/project_unkn.png" alt="Unknown Pleasures"/>
-      <p> </p>
+<ui-view>
+  <div class="projects-wrapper">
+    <h2>Projects	</h2>
+    <div class="pjleft">
+      <div ng-click="open(true)" class="project">
+        <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dest/assets/images/project_unkn.png" alt="Unknown Pleasures"/>
+        <p> </p>
+      </div>
+      <div ng-click="open(false)" class="project">
+        <h3>You are DEAD</h3><img src="dest/assets/images/project_youaredead.png" alt="placeholder"/>
+        <p>Escape from poop</p>
+      </div>
     </div>
-    <div ng-click="open(false)" class="project">
-      <h3>You are DEAD</h3><img src="dest/assets/images/project_youaredead.png" alt="placeholder"/>
-      <p>Escape from poop</p>
+    <div class="pjright">
+      <div ng-repeat="p in projects">
+        <div ng-show="pShow[$index]">
+          <h3>{{p.title}}</h3>
+          <p>{{p.detail}}</p>
+          <p> <a ui-sref="projects.detail({projectId:p.id})">Show Detail</a></p>
+        </div>
+      </div>
     </div>
   </div>
-  <div class="pjright">
-    <div ng-show="pShow[0]">
-      <h3>Eternal Unknown Pleasures</h3>
-      <p>You can enjoy Unknown Pleasures etarnally...</p>
-    </div>
-    <div ng-show="pShow[1]">
-      <h3>You are DEAD 💩</h3>
-      <p>Escape from poop</p>
-      <p>Death is inevitable</p>
-    </div>
-  </div>
-</div>
+</ui-view>

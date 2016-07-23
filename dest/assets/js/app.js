@@ -4,6 +4,8 @@ function init() {};
 
 var app = angular.module('App', ['ui.router']);
 
+var projects = [{ id: "unkn", title: 'Eternal Unknown Pleasures', detail: 'You can enjoy Unknown Pleasures etarnally...', name: "unkn" }, { id: "poop", title: 'YOU ARE DEAD', detail: 'escape from poop death is inevitable', name: "poop" }];
+
 app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     $locationProvider.html5Mode({
         enabled: true,
@@ -21,12 +23,23 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
     }).state('projects', {
         url: '/projects',
         templateUrl: 'dest/assets/templates/pages/projects.html',
-        controller: function controller($scope) {
+        controller: function controller($scope, $state) {
+            $scope.url = $state;
+            $scope.projects = projects;
             $scope.pShow = [true, false];
             $scope.open = function (b) {
                 $scope.pShow[0] = b;
                 $scope.pShow[1] = !b;
             };
+        }
+    }).state('projects.detail', {
+        url: '/detail/{projectId}',
+        templateUrl: 'dest/assets/templates/pages/projects/pde.html',
+        controller: function controller($stateParams, $scope) {
+            $scope.project = projects.find(function (item) {
+                return item.id === $stateParams.projectId;
+            });
+            $scope.src = 'dest/assets/pde/' + $scope.project.id + '.pde';
         }
     }).state('map', {
         url: '/map',

@@ -1,8 +1,11 @@
-function init(){
-
-};
+function init(){ };
 
 const app = angular.module('App', ['ui.router']);
+
+const projects = [
+  {id:"unkn", title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
+  {id:"poop", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
+];
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             $locationProvider.html5Mode({
@@ -14,26 +17,32 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 .state('/',{
                     url: '/',
                     templateUrl : 'dest/assets/templates/pages/main.html',
-                    controller: ($scope) => {
-
-                    }
+                    controller: ($scope) => { }
                 })
                 .state('biography',{
                     url: '/biography',
                     templateUrl : 'dest/assets/templates/pages/biography.html',
-                    controller: ($scope) => {
-
-                    }
+                    controller: ($scope) => { }
                 })
                 .state('projects',{
                     url: '/projects',
                     templateUrl : 'dest/assets/templates/pages/projects.html',
-                    controller: ($scope) => {
+                    controller: ($scope, $state) => {
+                      $scope.url = $state;
+                      $scope.projects = projects;
                       $scope.pShow = [true,false];
                       $scope.open = function(b){
                           $scope.pShow[0] = b;
                           $scope.pShow[1] = !b;
                         };
+                    }
+                })
+                .state('projects.detail',{
+                    url: '/detail/{projectId}',
+                    templateUrl : 'dest/assets/templates/pages/projects/pde.html',
+                    controller: ($stateParams,$scope) => {
+                      $scope.project = projects.find((item) => (item.id === $stateParams.projectId));
+                      $scope.src = 'dest/assets/pde/' + $scope.project.id + '.pde';
                     }
                 })
                 .state('map',{

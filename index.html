@@ -7,7 +7,7 @@
   <script src="dest/assets/js/processing.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js"></script>
-  <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.min.js"></script>
+  <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
 </head>
 <body>
   <header><a ui-sref="/"> <img src="dest/assets/images/etahapi.png" alt="logo" height="60"></a>
@@ -19,7 +19,7 @@
     </ul>
   </header>
   <div class="content">
-    <div ui-view></div>
+    <div ui-view autoscroll="false"></div>
   </div>
 </body>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>
