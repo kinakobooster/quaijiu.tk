@@ -1,9 +1,6 @@
-script(src='dest/assets/js/processing.js')
-script(type="text/processing" data-processing-target="pde" ng-src="{{src}}")
 h3 {{project.title}}
-canvas#pde(data-processing-sources="{{src}}" width="320" height="600")
-
-p {{project.detail}}
-p 
- a(href="{{src}}") source code
-p 2016/6/19 @kinakobooster
+  div(id='pde_holder')
+  p {{project.detail}}
+  p 
+    a(href="{{src}}") source code
+  p 2016/6/19 @kinakobooster

@@ -2,6 +2,15 @@ function init(){ };
 
 const app = angular.module('App', ['ui.router']);
 
+app.directive('processing', function() {
+  return {
+    scope: true,
+    link: function(scope, iElement, iAttrs) {
+      scope.$sketch = new Processing(iElement[0], scope[iAttrs.processing]);
+    }
+  };
+});
+
 const projects = [
   {id:"unkn", title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
   {id:"poop", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
@@ -43,6 +52,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: ($stateParams,$scope) => {
                       $scope.project = projects.find((item) => (item.id === $stateParams.projectId));
                       $scope.src = 'dest/assets/pde/' + $scope.project.id + '.pde';
+                      let cnvs = "<canvas id='pde' processing='sketch' data-processing-sources=" + $scope.src + " width='320' height='600'></canvas>"
+                      let d = document.getElementById('pde_holder');
+                      console.log(d);
+                      d.insertAdjacentHTML('beforeend',cnvs);
                     }
                 })
                 .state('map',{
