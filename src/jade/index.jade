@@ -8,7 +8,6 @@ head
 	script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js')
 	script(src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js')
 	script(src='dest/assets/js/processing.js')
-		
 body
 	header
 		a(ui-sref='/') 
@@ -22,6 +21,8 @@ body
 				a(ui-sref='map') access
 			li 
 				a(ui-sref='contact') contact
+	// inject:pde
+	// endinject
 	.content
 		div(ui-view autoscroll='false')
 script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init')

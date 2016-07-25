@@ -15,6 +15,7 @@ sourcemaps    = require 'gulp-sourcemaps'
 bower         = require 'main-bower-files'
 filter        = require 'gulp-filter'
 exec          = require('child_process').exec
+inject        = require 'gulp-inject'
 
 
 DEST  = './dest'
@@ -28,11 +29,14 @@ paths =
     index:     ["#{SRC}/jade/index.jade"]
     sass:      ["#{SRC}/sass/**/*.sass"]
     js:        ["#{SRC}/js/**/*.js"]
+    pde:       "#{SRC}/pde/*.pde"
+
   dest:
     js:        "#{DEST}/assets/js"
     html:      "#{DEST}/assets/templates/pages"
     index:     "./"
     css:       "#{DEST}/assets/stylesheets"
+    pde:        "#{DEST}/pde/"
 
 bourbon.with './src/sass/application'
 
@@ -80,6 +84,17 @@ gulp.task 'script', ->
   .pipe browserSync.reload
       stream: true
 
+gulp.task 'pde', ->
+  gulp.src './index.html'
+  .pipe inject(gulp.src(paths.src.pde),
+    transform: (filepath, file, i, length) ->
+      console.log(filepath)
+      '<script type="text/processing">'
+      + file.contents.toString
+      + '</script>'
+  )
+  .pipe gulp.dest './'
+
 gulp.task 'browser-sync', ->
   browserSync.init null,
     server: './'
@@ -95,4 +110,4 @@ gulp.task 'watch', ->
   watch paths.src.js, ->
     gulp.start ['script']
 
-gulp.task 'default', ['sass', 'index', 'jade', 'script', 'browser-sync', 'watch']
+gulp.task 'default', ['sass','index','jade', 'script', 'pde', 'browser-sync', 'watch']
