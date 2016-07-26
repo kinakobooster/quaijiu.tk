@@ -88,10 +88,7 @@ gulp.task 'pde', ->
   gulp.src './index.html'
   .pipe inject(gulp.src(paths.src.pde),
     transform: (filepath, file, i, length) ->
-      console.log(filepath)
-      '<script type="text/processing">'
-      + file.contents.toString
-      + '</script>'
+      return '<script type="text/processing">' + file.contents.toString + '</script>'
   )
   .pipe gulp.dest './'
 
