@@ -2,25 +2,15 @@
 <html ng-app="App" lang="en">
   <head>
     <meta charset="utf-8">
-    <title>EIFUKU CIPHER</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <link rel="stylesheet" type="text/css" href="dest/assets/stylesheets/main.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+		<script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
   </head>
   <body>
-    <header><a ui-sref="/"> <img src="dest/assets/images/etahapi.png" alt="logo" height="60"></a>
-      <ul>
-        <li><a ui-sref="biography">biography</a></li>
-        <li> <a ui-sref="projects">projects</a></li>
-        <li> <a ui-sref="map">access</a></li>
-        <li> <a ui-sref="contact">contact</a></li>
-      </ul>
-    </header>
+		<script src="dest/assets/js/processing.js"></script>
     <div class="content">
-      <div ui-view autoscroll="false"></div>
-    </div>
     <!-- inject:pde-->
-    <script type="text/processing" id = "pde_script_1">import java.util.*;
+    <script type="text/processing" data-processing-target="processing-canvas">
 ArrayList<Particle> particles;
 PImage poop,hand;
 PFont font;
@@ -143,8 +133,9 @@ class Particle{
    }
 
 }
-</script>
-    <script type="text/processing" id = "pde_script_2">int STROKECOUNT = 48;
+</script><canvas id="processing-canvas" width="300" height="600"></canvas>
+    <script type="text/processing" data-processing-target="processing-canvas2">
+		int STROKECOUNT = 48;
 
 void setup(){
   size(320,500);
@@ -178,8 +169,8 @@ void draw(){
 
 }
 </script>
-    <!-- endinject-->
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>
-    <script src="dest/assets/js/app.js"></script>
+<canvas id="processing-canvas2" width="300" height="600"></canvas>
+</div>
+
   </body>
 </html>

@@ -1,20 +1,11 @@
 function init(){ };
 
-const app = angular.module('App', ['ui.router']);
-
-app.directive('processing', function() {
-  return {
-    scope: true,
-    link: function(scope, iElement, iAttrs) {
-      scope.$sketch = new Processing(iElement[0], scope[iAttrs.processing]);
-    }
-  };
-});
-
 const projects = [
-  {id:"unkn", title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
-  {id:"poop", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
+  {id: "1" , title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
+  {id: "2", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
 ];
+
+const app = angular.module('App', ['ui.router']);
 
 app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             $locationProvider.html5Mode({
@@ -47,15 +38,17 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     }
                 })
                 .state('projects.detail',{
-                    url: '/detail/{projectId}',
+                    url: '/detail/{projectName}',
                     templateUrl : 'dest/assets/templates/pages/projects/pde.html',
                     controller: ($stateParams,$scope) => {
-                      $scope.project = projects.find((item) => (item.id === $stateParams.projectId));
-                      $scope.src = 'dest/assets/pde/' + $scope.project.id + '.pde';
-                      let cnvs = "<canvas id='pde' processing='sketch' data-processing-sources=" + $scope.src + " width='320' height='600'></canvas>"
-                      let d = document.getElementById('pde_holder');
-                      console.log(d);
-                      d.insertAdjacentHTML('beforeend',cnvs);
+                      $scope.project = projects.find((item) => (item.name === $stateParams.projectName));
+                      $scope.src = 'dest/assets/pde/' + $scope.project.name + '.pde';
+                      let script = document.getElementById('pde_script_2').innerHTML;
+                      let wrap = '<script src="dest/assets/js/processing.js"></script>'
+                      + '<script type="text/processing" data-processing-target="processing-canvas">'
+                      + script + '</script>'
+                      + '<canvas id="processing-canvas"></canvas>';
+                      document.getElementById("script_holder").innerHTML = wrap;
                     }
                 })
                 .state('map',{
