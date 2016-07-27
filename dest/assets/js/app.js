@@ -6,11 +6,7 @@ var projects = [{ id: "2", title: 'Eternal Unknown Pleasures', detail: 'You can 
 
 var app = angular.module('App', ['ui.router']);
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider.state('/', {
         url: '/',

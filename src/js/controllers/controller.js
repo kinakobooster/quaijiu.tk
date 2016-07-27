@@ -7,11 +7,7 @@ const projects = [
 
 const app = angular.module('App', ['ui.router']);
 
-app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
-            $locationProvider.html5Mode({
-                enabled: true,
-                requireBase: false
-              })
+app.config(function($stateProvider, $urlRouterProvider) {
             $urlRouterProvider.otherwise("/")
             $stateProvider
                 .state('/',{
