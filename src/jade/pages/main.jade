@@ -17,16 +17,16 @@ h1.resizeimage
 	</svg>
 	
 	
-.what-wrapper
-	p We are creative team in Eifuku
-	
-.projects-wrapper
-	h3 Projects
-	.pjbox
-		.project(ng-click="open(true)")
-			img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures")
-		.project(ng-click="open(false)")
-			img(src="dest/assets/images/project_youaredead.png", alt="Escape from poop")
-		.project(ng-click="open(false)")
-			img(src="dest/assets/images/project_youaredead.png", alt="Escape from poop")
+.what-wrapper.m-wrapper
+	h3 We are creative team in Eifuku
+	p 
+		a(ui-sref='biography') view members
+		
+.m-projects-wrapper.m-wrapper
+	.wrap
+		h3 Projects
+		p
+			a(ui-sref='projects') view projects
+
+
 		

@@ -4,11 +4,11 @@ ui-view
 		.pjleft
 			.project(ng-click="open(true)")
 				h3 Eternal Unknown Pleasures
-				img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures")
+				img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures",onmouseover="this.src='dest/assets/images/project_unkn.gif'",onmouseout="this.src='dest/assets/images/project_unkn.png'")
 				p 
 			.project(ng-click="open(false)")
 				h3 You are DEAD
-				img(src="dest/assets/images/project_youaredead.png", alt="placeholder")
+				img(src="dest/assets/images/project_youaredead.png", alt="Escape from poop",onmouseover="this.src='dest/assets/images/project_youaredead.gif'",onmouseout="this.src='dest/assets/images/project_youaredead.png'")
 				p Escape from poop
 		.pjright
 			div(ng-repeat="p in projects")
