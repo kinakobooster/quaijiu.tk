@@ -6,11 +6,7 @@ var projects = [{ id: "2", title: 'Eternal Unknown Pleasures', detail: 'You can 
 
 var app = angular.module('App', ['ui.router']);
 
-app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
-    $locationProvider.html5Mode({
-        enabled: true,
-        requireBase: false
-    });
+app.config(function ($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
     $stateProvider.state('/', {
         url: '/',
@@ -39,7 +35,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
             $scope.project = projects.find(function (item) {
                 return item.name === $stateParams.projectName;
             });
-            $scope.src = 'dest/assets/pde/' + $scope.project.name + '.pde';
+            $scope.src = 'src/pde/' + $scope.project.name + '.pde';
             var pde_name = 'pde_script_' + $scope.project.id;
             var script = document.getElementById(pde_name).innerHTML;
             var canvas = document.getElementById("processing-canvas");
