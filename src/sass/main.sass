@@ -5,6 +5,11 @@
   src: url('../fonts/leaguegothic-italic-webfont.eot')
   src: url('../fonts/leaguegothic-italic-webfont.eot?iefix') format("eot"), url('../fonts/leaguegothic-italic-webfont.woff') format("woff"), url('../fonts/leaguegothic-italic-webfont.ttf') format("truetype"), url('../fonts/leaguegothic-italic-webfont.svg#webfontjSpbZQRv') format("svg")
 
+$mainBlue : rgb(20, 15, 57)
+$bgGray : rgb(117, 120, 135)
+$accentYellow : rgb(236, 234, 0)
+$textWhite : rgb(255, 254, 250)
+
 
 input[type="checkbox"].bellows
   display: none
@@ -33,14 +38,15 @@ input[type="checkbox"].bellows:checked + .person
 
 body
   margin: auto;
-  background: #33333D;
-  color: #eee;
+  background: $bgGray
+  color: $textWhite
   font-family:  sans-serif;
 
 header
-  background-color: #114;
+  background-color: $mainBlue
   height: 60px
-  position: absolute
+  position: fixed
+  z-index: 100
   top: 0
   width: 100%
   img
@@ -61,20 +67,34 @@ header
 
     a
       display: inline-block
-      color: #fff
+      color: $textWhite
       text-decoration: none
       padding: 20px
       height: 100%
+      transition: all 0.5s;
     a:hover
-      background-color: #225
+      background-color: $accentYellow
+      color: $mainBlue
+      transition: all 0.5s;
+
 .content
-  position: absolute
+  position: relative
   top: 60px
   width: 100%
 footer
-  position: absolute
-  bottom: 0px
+  height : 300px
+  padding: 40px
+  position: relative
+  top: 60px
   width: 100%
+  background-image:  url("../../../dest/assets/images/footerneco.png")
+  background-position: bottom right
+  background-size: auto
+  background-repeat: no-repeat
+  text-align: left
+  p
+    padding-left: 25px
+
 
 h1
   margin: auto;
@@ -102,15 +122,17 @@ h3
   padding: 25px
 
 .what-wrapper
-  background: #0d030f;
-  color: #eee;
+  background: $accentYellow
+  color: $mainBlue
   margin: auto;
+
   p
     width: 100%
-    padding: 2em
+    padding:  4em 0
     text-align: center;
-    font-size: 1em
-    letter-spacing: 3px;
+    font-size: 3em
+    letter-spacing: 2px;
+    font-family: leaguegothic
 
 .biography-wrapper
   h2
@@ -160,8 +182,8 @@ h3
       transition: 0.5s
     a:hover
       transition: 0.2s
-      color: #ffffff
-      background: #aa0033
+      color: $mainBlue
+      background: $accentYellow
 
 
   #geru
@@ -180,11 +202,21 @@ h3
     background-position: right center
 
 .projects-wrapper
-  background: #0d0322
-  height : 400px
-  overflow-y: scroll
-  h2
-    font-size: 1.5em
+  background: $mainBlue
+  overflow: hidden
+  h3
+    text-align: center
+
+
+  .pjbox
+    clear: both
+    img
+      width: 30%
+      height : auto
+      float: left
+      margin: 12px 1.5%
+
+
   .pjleft
     width: 25%;
     padding: 25px

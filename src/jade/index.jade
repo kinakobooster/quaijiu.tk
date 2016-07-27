@@ -1,5 +1,6 @@
 doctype html
 html(ng-app='App' lang='en')
+<<<<<<< HEAD
 		head
 			meta(charset='utf-8')
 			title='EIFUKU CIPHER'
@@ -27,3 +28,35 @@ html(ng-app='App' lang='en')
 			script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init')
 			script(src='dest/assets/js/processing.js')
 			script(src='dest/assets/js/app.js')
+=======
+head
+	meta(charset='utf-8')
+	title='EIFUKU CIPHER'
+	link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
+	script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js')
+	script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular-animate.min.js')
+	script(src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js')
+	script(src='dest/assets/js/processing.js')
+		
+body
+	header
+		a(ui-sref='/') 
+			img(src='dest/assets/images/etahapi.png', alt='logo' height='60')
+		ul
+			li
+				a(ui-sref='biography') biography
+			li 
+				a(ui-sref='projects') projects
+			li 
+				a(ui-sref='map') access
+			li 
+				a(ui-sref='contact') contact
+	.content
+		div(ui-view autoscroll='false')
+	footer
+		h3 Contact
+		p kado@nouk.in
+		p or @kdxu on twitter
+script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init')
+script(src='dest/assets/js/app.js')
+>>>>>>> 💅
