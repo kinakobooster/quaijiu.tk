@@ -38,7 +38,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
                     templateUrl : 'dest/assets/templates/pages/projects/pde.html',
                     controller: ($stateParams,$scope) => {
                       $scope.project = projects.find((item) => (item.name === $stateParams.projectName));
-                      $scope.src = 'dest/assets/pde/' + $scope.project.name + '.pde';
+                      $scope.src = 'src/pde/' + $scope.project.name + '.pde';
                       let pde_name = 'pde_script_' + $scope.project.id;
                       let script = document.getElementById(pde_name).innerHTML;
                       let canvas = document.getElementById("processing-canvas")
