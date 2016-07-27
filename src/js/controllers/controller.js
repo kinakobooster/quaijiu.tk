@@ -1,8 +1,8 @@
 function init(){ };
 
 const projects = [
-  {id: "1" , title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
-  {id: "2", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
+  {id: "2" , title: 'Eternal Unknown Pleasures', detail:'You can enjoy Unknown Pleasures etarnally...', name:"unkn"},
+  {id: "1", title: 'YOU ARE DEAD', detail:'escape from poop death is inevitable', name:"poop"}
 ];
 
 const app = angular.module('App', ['ui.router']);
@@ -43,12 +43,10 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                     controller: ($stateParams,$scope) => {
                       $scope.project = projects.find((item) => (item.name === $stateParams.projectName));
                       $scope.src = 'dest/assets/pde/' + $scope.project.name + '.pde';
-                      let script = document.getElementById('pde_script_2').innerHTML;
-                      let wrap = '<script src="dest/assets/js/processing.js"></script>'
-                      + '<script type="text/processing" data-processing-target="processing-canvas">'
-                      + script + '</script>'
-                      + '<canvas id="processing-canvas"></canvas>';
-                      document.getElementById("script_holder").innerHTML = wrap;
+                      let pde_name = 'pde_script_' + $scope.project.id;
+                      let script = document.getElementById(pde_name).innerHTML;
+                      let canvas = document.getElementById("processing-canvas")
+                      var p = new Processing(canvas, script);
                     }
                 })
                 .state('map',{

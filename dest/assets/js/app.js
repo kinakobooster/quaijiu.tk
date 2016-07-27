@@ -2,7 +2,7 @@
 
 function init() {};
 
-var projects = [{ id: "1", title: 'Eternal Unknown Pleasures', detail: 'You can enjoy Unknown Pleasures etarnally...', name: "unkn" }, { id: "2", title: 'YOU ARE DEAD', detail: 'escape from poop death is inevitable', name: "poop" }];
+var projects = [{ id: "2", title: 'Eternal Unknown Pleasures', detail: 'You can enjoy Unknown Pleasures etarnally...', name: "unkn" }, { id: "1", title: 'YOU ARE DEAD', detail: 'escape from poop death is inevitable', name: "poop" }];
 
 var app = angular.module('App', ['ui.router']);
 
@@ -40,9 +40,10 @@ app.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
                 return item.name === $stateParams.projectName;
             });
             $scope.src = 'dest/assets/pde/' + $scope.project.name + '.pde';
-            var script = document.getElementById('pde_script_2').innerHTML;
-            var wrap = '<script src="dest/assets/js/processing.js"></script>' + '<script type="text/processing" data-processing-target="processing-canvas">' + script + '</script>' + '<canvas id="processing-canvas"></canvas>';
-            document.getElementById("script_holder").innerHTML = wrap;
+            var pde_name = 'pde_script_' + $scope.project.id;
+            var script = document.getElementById(pde_name).innerHTML;
+            var canvas = document.getElementById("processing-canvas");
+            var p = new Processing(canvas, script);
         }
     }).state('map', {
         url: '/map',
