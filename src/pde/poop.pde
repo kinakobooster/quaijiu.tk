@@ -5,12 +5,13 @@ PFont font;
 Particle p;
 int gameover = 0;
 int score = 0;
+boolean gameover = false;
 
 void setup(){
-  size(640,360);
+  size(320,480);
   particles = new ArrayList<Particle>();
-  poop = loadImage("dest/assets/pde/emoji_poop.png");
-  hand = loadImage("dest/assets/pde/emoji_hand.png");
+  poop = loadImage("dest/assets/images/emoji_poop.png");
+  hand = loadImage("dest/assets/images/emoji_hand.png");
   font = createFont("Helvetica", 32);
   textFont(font);
 }
@@ -44,14 +45,18 @@ void gameOver(){
   rect(0,0,width,height);
   fill(255);
   text("YOU are DEAD", 50,50);
+  gameover = true;
   noLoop();
 
 }
 
 void mouseClicked(){
+  if(gameover == true){
   particles.clear();
   score = 0;
   loop();
+  gameover = false;
+}
 
 }
 
