@@ -9,8 +9,21 @@ html(ng-app='App' lang='en')
 			script(src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js')
 		body
 			header
-				a(ui-sref='/') 
-					img(src='dest/assets/images/eifukulogo.svg', alt='EIFUKU CIPHER')
+				.headerWrapper
+					h1
+						a(ui-sref='/') 
+							img(src='dest/assets/images/eifukulogo.svg', alt='EIFUKU CIPHER')
+					nav
+						ul
+							li
+								a(ui-sref='biography') biography
+							li 
+								a(ui-sref='projects') projects
+							li 
+								a(ui-sref='map') access
+							li 
+								a(ui-sref='contact') contact
+			.content
 				nav
 					ul
 						li
@@ -19,24 +32,12 @@ html(ng-app='App' lang='en')
 							a(ui-sref='projects') projects
 						li 
 							a(ui-sref='map') access
-						li 
+						li.halfHeight
 							a(ui-sref='contact') contact
-
-			.content
-			nav
-				ul
-					li
-						a(ui-sref='biography') biography
-					li 
-						a(ui-sref='projects') projects
-					li 
-						a(ui-sref='map') access
-					li 
-						a(ui-sref='contact') contact
-				div(ui-view autoscroll='false')
-			// inject:pde
-			// endinject
-			
+				.innerbox(ui-view autoscroll='false')
+				// inject:pde
+				// endinject
+					
 			footer			
 				ul
 					li

@@ -9,28 +9,33 @@
     <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
   </head>
   <body>
-    <header><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a>
+    <header>
+      <div class="headerWrapper">
+        <h1><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a></h1>
+        <nav>
+          <ul>
+            <li><a ui-sref="biography">biography</a></li>
+            <li> <a ui-sref="projects">projects</a></li>
+            <li> <a ui-sref="map">access</a></li>
+            <li> <a ui-sref="contact">contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="content">
       <nav>
         <ul>
           <li><a ui-sref="biography">biography</a></li>
           <li> <a ui-sref="projects">projects</a></li>
           <li> <a ui-sref="map">access</a></li>
-          <li> <a ui-sref="contact">contact</a></li>
+          <li class="halfHeight"><a ui-sref="contact">contact</a></li>
         </ul>
       </nav>
-    </header>
-    <div class="content"></div>
-    <nav>
-      <ul>
-        <li><a ui-sref="biography">biography</a></li>
-        <li> <a ui-sref="projects">projects</a></li>
-        <li> <a ui-sref="map">access</a></li>
-        <li> <a ui-sref="contact">contact</a></li>
-      </ul>
-      <div ui-view autoscroll="false"></div>
-    </nav>
-    <!-- inject:pde-->
-    <!-- endinject-->
+      <div ui-view autoscroll="false" class="innerbox"></div>
+      <!-- inject:pde-->
+      <!-- endinject
+      -->
+    </div>
     <footer>			
       <ul>
         <li><a ui-sref="biography">biography</a></li>
