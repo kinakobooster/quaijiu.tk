@@ -9,31 +9,35 @@
     <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
   </head>
   <body>
-    <header>
-      <div class="headerWrapper">
-        <h1><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a></h1>
+    <div id="main_content">
+      <header>
+        <div class="headerWrapper">
+          <h1><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a></h1>
+          <nav>
+            <ul>
+              <li><a ui-sref="biography">biography</a></li>
+              <li> <a ui-sref="projects">projects</a></li>
+              <li> <a ui-sref="map">access</a></li>
+              <li> <a ui-sref="contact">contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="content">
         <nav>
           <ul>
             <li><a ui-sref="biography">biography</a></li>
             <li> <a ui-sref="projects">projects</a></li>
             <li> <a ui-sref="map">access</a></li>
-            <li> <a ui-sref="contact">contact</a></li>
+            <li class="halfHeight"><a ui-sref="contact">contact</a></li>
           </ul>
         </nav>
+        <div ui-view autoscroll="false" class="innerbox"></div>
       </div>
-    </header>
-    <div class="content">
-      <nav>
-        <ul>
-          <li><a ui-sref="biography">biography</a></li>
-          <li> <a ui-sref="projects">projects</a></li>
-          <li> <a ui-sref="map">access</a></li>
-          <li class="halfHeight"><a ui-sref="contact">contact</a></li>
-        </ul>
-      </nav>
-      <div ui-view autoscroll="false" class="innerbox"></div>
-      <!-- inject:pde-->
-      <script type="text/processing" id = "pde_script_1">import java.util.*;
+      <footer></footer>
+    </div>
+    <!-- inject:pde-->
+    <script type="text/processing" id = "pde_script_1">import java.util.*;
 ArrayList<Particle> particles;
 PImage poop,hand;
 PFont font;
@@ -162,7 +166,7 @@ class Particle{
 
 }
 </script>
-      <script type="text/processing" id = "pde_script_2">int STROKECOUNT = 48;
+    <script type="text/processing" id = "pde_script_2">int STROKECOUNT = 48;
 
 void setup(){
   size(320,500);
@@ -196,17 +200,7 @@ void draw(){
 
 }
 </script>
-      <!-- endinject
-      -->
-    </div>
-    <footer>
-      <ul>
-        <li><a ui-sref="biography">biography</a></li>
-        <li> <a ui-sref="projects">projects</a></li>
-        <li> <a ui-sref="map">access</a></li>
-        <li> <a ui-sref="contact">contact</a></li>
-      </ul>
-    </footer>
+    <!-- endinject-->
   </body>
 </html>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>

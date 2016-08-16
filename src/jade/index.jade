@@ -1,13 +1,14 @@
 doctype html
 html(ng-app='App' lang='en')
-		head
+	head
 			meta(charset='utf-8')
 			meta(name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0")
 			title='EIFUKU CIPHER'
 			link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
 			script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js')
 			script(src='https://angular-ui.github.io/ui-router/release/angular-ui-router.js')
-		body
+	body
+		div(id="main_content")
 			header
 				.headerWrapper
 					h1
@@ -35,18 +36,9 @@ html(ng-app='App' lang='en')
 						li.halfHeight
 							a(ui-sref='contact') contact
 				.innerbox(ui-view autoscroll='false')
-				// inject:pde
-				// endinject
-			footer			
-				ul
-					li
-						a(ui-sref='biography') biography
-					li 
-						a(ui-sref='projects') projects
-					li 
-						a(ui-sref='map') access
-					li 
-						a(ui-sref='contact') contact
+			footer
+		// inject:pde
+		// endinject
 script(async defer src='https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&language=en&callback=init')
 script(src='dest/assets/js/processing.js')
 script(src='dest/assets/js/app.js')

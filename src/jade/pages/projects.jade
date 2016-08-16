@@ -1,17 +1,9 @@
 ui-view
 	.projects-wrapper
 		h3 Projects	
-		.pjleft
-			.project(ng-click="open(true)")
-				img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures",onmouseover="this.src='dest/assets/images/project_unkn.gif'",onmouseout="this.src='dest/assets/images/project_unkn.png'")
-				p 
-			.project(ng-click="open(false)")
-				img(src="dest/assets/images/project_youaredead.png", alt="Escape from poop",onmouseover="this.src='dest/assets/images/project_youaredead.gif'",onmouseout="this.src='dest/assets/images/project_youaredead.png'")
-				p Escape from poop
-		.pjright
-			div(ng-repeat="p in projects")
-				div(ng-show="pShow[$index]")
-					h5 {{p.title}}
+		.wrap(ng-repeat="p in projects")
+			a.mono.project(ui-sref="projects.detail({projectName:p.name})" ng-attr-id="{{p.name}}")
+				.bgMask
+					h4 {{p.title}}
 					p {{p.detail}}
-					p 
-						a(ui-sref="projects.detail({projectName:p.name})") Show Detail
+					p {{p.date}}
