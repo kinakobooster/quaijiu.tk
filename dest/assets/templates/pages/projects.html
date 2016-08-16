@@ -1,21 +1,19 @@
 
 <ui-view>
   <div class="projects-wrapper">
-    <h2>Projects	</h2>
+    <h3>Projects	</h3>
     <div class="pjleft">
-      <div ng-click="open(true)" class="project">
-        <h3>Eternal Unknown Pleasures</h3><img id="unkn" src="dest/assets/images/project_unkn.png" alt="Unknown Pleasures" onmouseover="this.src='dest/assets/images/project_unkn.gif'" onmouseout="this.src='dest/assets/images/project_unkn.png'"/>
+      <div ng-click="open(true)" class="project"><img id="unkn" src="dest/assets/images/project_unkn.png" alt="Unknown Pleasures" onmouseover="this.src='dest/assets/images/project_unkn.gif'" onmouseout="this.src='dest/assets/images/project_unkn.png'"/>
         <p> </p>
       </div>
-      <div ng-click="open(false)" class="project">
-        <h3>You are DEAD</h3><img src="dest/assets/images/project_youaredead.png" alt="Escape from poop" onmouseover="this.src='dest/assets/images/project_youaredead.gif'" onmouseout="this.src='dest/assets/images/project_youaredead.png'"/>
+      <div ng-click="open(false)" class="project"><img src="dest/assets/images/project_youaredead.png" alt="Escape from poop" onmouseover="this.src='dest/assets/images/project_youaredead.gif'" onmouseout="this.src='dest/assets/images/project_youaredead.png'"/>
         <p>Escape from poop</p>
       </div>
     </div>
     <div class="pjright">
       <div ng-repeat="p in projects">
         <div ng-show="pShow[$index]">
-          <h3>{{p.title}}</h3>
+          <h5>{{p.title}}</h5>
           <p>{{p.detail}}</p>
           <p> <a ui-sref="projects.detail({projectName:p.name})">Show Detail</a></p>
         </div>

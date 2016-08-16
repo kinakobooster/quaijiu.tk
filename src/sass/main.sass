@@ -18,16 +18,16 @@ input[type="checkbox"].bellows
 input[type="checkbox"].bellows + .person
     height: 150px
     @media screen and (min-width: 960px)
-      height: 120px;
-    overflow: hidden;
+      height: 120px
+    overflow: hidden
     .bioArticleWrap
       bottom: -200px
 
 
 input[type="checkbox"].bellows:checked + .person
-    height: 250px
+    height: 245px
     @media screen and (min-width: 960px)
-      height: 220px
+      height: 215px
     h3
       display: inline-block
     .bioArticleWrap
@@ -55,10 +55,10 @@ body:before
 
 
 body
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: 0;
+  position: absolute
+  left: 0
+  right: 0
+  z-index: 0
   color: $textWhite
   font-family: 'Roboto'
   font-size: 18px
@@ -100,7 +100,10 @@ header
     width: 450px
     text-align: right
     @media screen and (max-width: 960px)
-      display: none
+      left: 0
+      width: 100%
+      padding: 20px 0
+      text-align: center
     ul
       display: inline-block
       height: 100%
@@ -123,7 +126,7 @@ header
         a:hover
           background-color: $accentYellow
           color: $mainBlue
-          transition: all 0.5s;
+          transition: all 0.5s
 
 .content
   position: relative
@@ -139,7 +142,7 @@ header
   margin: auto
 
   @media screen and (max-width: 960px)
-    top: 48px
+    top: 80px
   .innerbox
     margin: 0 12px
     border: $textWhite 1px solid
@@ -173,7 +176,7 @@ header
       a
         text-decoration: none
         color: $textWhite
-        font-family: 'leaguegothic'
+        font-family: 'Roboto'
         font-size: 24px
 
 
@@ -197,7 +200,6 @@ footer
   @media screen and (max-width: 960px)
     top: 60px
 
-
   background-image:  url("../../../dest/assets/images/footerneco.png")
   background-position: bottom right
   background-size: auto
@@ -219,16 +221,16 @@ footer
 
 
 h1
-  margin: auto;
+  margin: auto
   width: 100%auto
 
 
 h2
   font-family: 'Roboto'
-  padding: 0.5em;
-  text-align: center;
-  font-size: 3em;
-  margin-bottom: 0.5em;
+  padding: 0.5em
+  text-align: center
+  font-size: 3em
+  margin-bottom: 0.5em
 
 
 
@@ -246,12 +248,12 @@ h3
 .m-wrapper
   background: $accentYellow
   color: $mainBlue
-  margin: auto;
+  margin: auto
   padding:  3em 0
   width: 100%
-  text-align: center;
+  text-align: center
   font-size: 3em
-  letter-spacing: 2px;
+  letter-spacing: 2px
   font-family: leaguegothic
   @media screen and (max-width: 600px)
     padding: 1.5em
@@ -291,18 +293,18 @@ h3
 
 .biography-wrapper
   h2
-    display: none;
+    display: none
   .person
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
+    -webkit-transition: all 0.5s
+    -moz-transition: all 0.5s
+    -ms-transition: all 0.5s
+    -o-transition: all 0.5s
+    transition: all 0.5s
 
-    background-color:		rgba(0,0,0,0.5);
+    background-color:		rgba(0,0,0,0.5)
     height: 150px
     @media screen and (min-width: 960px)
-      height: 120px;
+      height: 120px
     background-size: cover
     background-position: left,center
     overflow: hidden
@@ -310,23 +312,24 @@ h3
 
     h3
       display: inline-block
+      font-size: 2.5em
 
     .bioArticleWrap
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
+      -webkit-transition: all 0.5s
+      -moz-transition: all 0.5s
+      -ms-transition: all 0.5s
+      -o-transition: all 0.5s
+      transition: all 0.5s
       position: absolute
       bottom: -200px
       width: 100%
       padding: 25px
     h4
-      font-family: 'leaguegothic'
-      font-size: 2em
+      font-family: 'Roboto'
       color: #ff1166
     p
       margin: auto
+      font-size: 0.8em
     a
       text-decoration: none
       color: $textWhite
@@ -342,7 +345,7 @@ h3
 
 
   #geru
-    text-align: right;
+    text-align: right
     background-image:  url("../../../dest/assets/images/bg_geru2.jpg")
   #meg
     background-image: url("../../../dest/assets/images/bg_meg.jpg")
@@ -359,9 +362,20 @@ h3
 
 
 .projects-wrapper
-  background: $mainBlue
   overflow: hidden
 
+  a
+    text-decoration: none
+    color: $textWhite
+    padding: 0.4em
+    background-color: $mainBlue
+    letter-spacing: 0.15em
+    display: inline-block
+    transition: 0.5s
+  a:hover
+    transition: 0.2s
+    color: $mainBlue
+    background: $accentYellow
 
   .pjbox
     clear: both
@@ -370,28 +384,25 @@ h3
       height : auto
       float: left
       margin: 12px 1.5%
-    h3
+    h5
       display: none
     p
       display: none
 
-
   .pjleft
-    width: 25%;
+    width: 25%
     padding: 25px
-    float: left;
-    background-color: #0d0322
+    float: left
     .project
       width: 100%
       padding: 5px
-      h3
+      h5
         display: none
       p
         display: none
       img
         width : 100%
   .pjright
-    background-color: #0d0322
     width: 75%
     float: right
     p
@@ -407,7 +418,6 @@ h3
         font-size: 2em
         color: (100,100,100,50)
       #map
-
         height: 250px
         width: 100%, 600px
 
@@ -434,12 +444,12 @@ canvas
     @content
 
 @mixin animation($animation-name)
-  -webkit-animation: #{$animation-name};
-  -moz-animation: #{$animation-name};
-  animation: #{$animation-name};
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
+  -webkit-animation: #{$animation-name}
+  -moz-animation: #{$animation-name}
+  animation: #{$animation-name}
+  -webkit-animation-fill-mode: both
+  -moz-animation-fill-mode: both
+  animation-fill-mode: both
 
 
 @for $i from 1 through 12
