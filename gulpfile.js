@@ -1,37 +1,20 @@
 var gulp = require('gulp');
-
 var browserify = require('browserify');
-
 var source = require('vinyl-source-stream');
-
 var browserSync = require('browser-sync');
-
 var plumber = require('gulp-plumber');
-
 var notify = require('gulp-notify');
-
 var watch = require('gulp-watch');
-
 var uglify = require('gulp-uglify');
-
 var sass = require('gulp-sass');
-
 var bourbon = require('node-bourbon');
-
 var jade = require('gulp-jade');
-
 var babel = require('gulp-babel');
-
 var concat = require('gulp-concat');
-
 var sourcemaps = require('gulp-sourcemaps');
-
 var bower = require('main-bower-files');
-
 var filter = require('gulp-filter');
-
 var exec = require('child_process').exec;
-
 var inject = require('gulp-inject');
 
 var DEST = './dest';
