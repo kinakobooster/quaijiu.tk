@@ -9,17 +9,32 @@
     <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
   </head>
   <body>
-    <header>
-      <div class="headlogo"><a ui-sref="/"> <img src="dest/assets/images/etahapi.png" alt="logo" height="60"></a></div>
-      <ul>
-        <li><a ui-sref="biography">biography</a></li>
-        <li> <a ui-sref="projects">projects</a></li>
-        <li> <a ui-sref="map">access</a></li>
-        <li> <a ui-sref="contact">contact</a></li>
-      </ul>
-    </header>
-    <div class="content">
-      <div ui-view autoscroll="false"></div>
+    <div id="main_content">
+      <header>
+        <div class="headerWrapper">
+          <h1><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a></h1>
+          <nav>
+            <ul>
+              <li><a ui-sref="biography">biography</a></li>
+              <li> <a ui-sref="projects">projects</a></li>
+              <li> <a ui-sref="map">access</a></li>
+              <li> <a ui-sref="contact">contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <div class="content">
+        <nav>
+          <ul>
+            <li><a ui-sref="biography">biography</a></li>
+            <li> <a ui-sref="projects">projects</a></li>
+            <li> <a ui-sref="map">access</a></li>
+            <li class="halfHeight"><a ui-sref="contact">contact</a></li>
+          </ul>
+        </nav>
+        <div ui-view autoscroll="false" class="innerbox"></div>
+      </div>
+      <footer></footer>
     </div>
     <!-- inject:pde-->
     <script type="text/processing" id = "pde_script_1">import java.util.*;
@@ -29,12 +44,13 @@ PFont font;
 Particle p;
 int gameover = 0;
 int score = 0;
+boolean gameover = false;
 
 void setup(){
-  size(640,360);
+  size(320,480);
   particles = new ArrayList<Particle>();
-  poop = loadImage("dest/assets/pde/emoji_poop.png");
-  hand = loadImage("dest/assets/pde/emoji_hand.png");
+  poop = loadImage("dest/assets/images/emoji_poop.png");
+  hand = loadImage("dest/assets/images/emoji_hand.png");
   font = createFont("Helvetica", 32);
   textFont(font);
 }
@@ -68,14 +84,18 @@ void gameOver(){
   rect(0,0,width,height);
   fill(255);
   text("YOU are DEAD", 50,50);
+  gameover = true;
   noLoop();
 
 }
 
 void mouseClicked(){
+  if(gameover == true){
   particles.clear();
   score = 0;
   loop();
+  gameover = false;
+}
 
 }
 
@@ -181,13 +201,6 @@ void draw(){
 }
 </script>
     <!-- endinject-->
-    <footer>
-      <h3>Contact</h3>
-      <div class="contact-box">
-        <p>mail: kado@nouk.in</p>
-        <p>twitter: @kdxu</p>
-      </div>
-    </footer>
   </body>
 </html>
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>

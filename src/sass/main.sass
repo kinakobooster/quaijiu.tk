@@ -8,26 +8,22 @@
 $mainBlue : rgb(20, 15, 57)
 $bgGray : rgb(117, 120, 135)
 $accentYellow : rgb(236, 234, 0)
-$textWhite : rgb(255, 254, 250)
-$black : rgb(15, 0, 0)
+$textWhite : rgb(255, 255, 255)
+$black : rgb(0, 0, 0)
 
 
 input[type="checkbox"].bellows
   display: none
 
 input[type="checkbox"].bellows + .person
-    height: 150px
-    @media screen and (min-width: 960px)
-      height: 120px;
-    overflow: hidden;
+    height: 138px
+    overflow: hidden
     .bioArticleWrap
       bottom: -200px
 
 
 input[type="checkbox"].bellows:checked + .person
-    height: 250px
-    @media screen and (min-width: 960px)
-      height: 220px
+    height: 245px
     h3
       display: inline-block
     .bioArticleWrap
@@ -37,95 +33,188 @@ input[type="checkbox"].bellows:checked + .person
 .resizeimage img
   width: 100%
 
+
+#main_content:before
+  content: ""
+  left: 0
+  right: 0
+  z-index: -1
+  position: fixed
+
+  display: block
+  background-image: url('../../../dest/assets/images/bg.jpg')
+  background-color: $black
+  background-size: cover
+  background-position: center center
+  width: 100%
+  height: 800px
+  transition: 1s
+
+#main_content.blur:before
+  transition: 1s
+  -webkit-filter: blur(6px)
+  filter: blur(6px)
+
+
+
 body
-  margin: auto
-  background: $bgGray
+  position: absolute
+  left: 0
+  right: 0
+  z-index: 0
   color: $textWhite
-  font-family:  sans-serif
+  font-family: 'Roboto'
+  font-size: 18px
+
+// ヘッダー
 
 header
-  background-color: $mainBlue
-  height: 60px
+  background-color: $black
+  height: 96px
   position: fixed
   z-index: 100
   top: 0
   width: 100%
-  @media screen and (max-width: 600px)
-    height : 90px
-  .headlogo
-    @media screen and (max-width: 600px)
-      width: 100%
-      text-align: center
-  img
-    display: inline-block
-    float:left
-    @media screen and (max-width: 600px)
-      float: none
-      height: 18px
-      margin: auto
-      align: center
-  ul
-    position: absolute
-    left : 100px
-    top: 0
-
-
-    display: inline-block
-    height: 100%
-    margin: 0
-    @media screen and (max-width: 600px)
-      left: 0
+  @media screen and (max-width: 960px)
+    height: 96px
+    text-align: center
+.headerWrapper
+  max-width: 960px
+  margin: auto
+  h1
+    img
+      z-index: 150
+      padding: 12px auto
       top: 18px
+      height: 60px
+      width: 321px
+      display: inline-block
+      position: absolute
+      @media screen and (max-width: 960px)
+        height: 40px
+        width: 214px
+        top: 4px
+        margin-left: -107px
+  nav
+    position: relative
+    top: 0
+    bottom: 0
+    left: 960-450px
+    display: block
+    height: 100%
+    width: 450px
+    text-align: right
+    @media screen and (max-width: 960px)
+      left: 0
       width: 100%
-
-
-
-    li
-      display: inline-block
-      height: 100%
-      @media screen and (max-width: 600px)
-        width: 24%
-        height: auto
-
-
-    a
-      display: inline-block
+      padding: 20px 0
       text-align: center
-      color: $textWhite
-      text-decoration: none
-      padding: 20px
+    ul
+      display: inline-block
       height: 100%
-      transition: all 0.5s
-      @media screen and (max-width: 600px)
-        padding:  auto
+      margin: 0
+      li
+        display: inline-block
+        height: 100%
+        a
+          line-height: 96px
+          text-align: center
+          color: $textWhite
+          text-decoration: none
+          padding: 12px
+          vertical-align: middle
+          height: 100%
+          width: 100%
+          transition: all 0.5s
+          @media screen and (max-width: 600px)
+            padding:  6px
+            font-size: 0.9em
+        a:hover
+          background-color: $accentYellow
+          color: $mainBlue
+          transition: all 0.5s
 
-
-
-    a:hover
-      background-color: $accentYellow
-      color: $mainBlue
-      transition: all 0.5s;
+// 枠（index.jade内）
 
 .content
   position: relative
-  top: 60px
+  top: 96px
   width: 100%
-  @media screen and (max-width: 600px)
-    top: 80px
+  padding-top: 12px
+  margin-bottom: 12px
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: stretch
+  max-width: 960px
+  margin: auto
+
+
+
+  .innerbox
+    margin: 0 12px
+    border: $textWhite 1px solid
+    padding: 12px
+    order: 1
+    flex-grow: 1
+    overflow: scroll
+    height: 624px
+    @media screen and (max-width: 600px)
+      height: 600px
+
+
+  nav
+    width: 168px
+    order: 2
+    margin-right: 12px
+    @media screen and (max-width: 600px)
+      display: none
+
+    ul
+      display: flex
+      flex-direction: column
+      li
+        border: $textWhite 1px solid
+        width: 168px
+        height: 168px
+        margin-bottom: 12px
+        position: relative
+      .halfHeight
+        height: 84px
+        margin: 0
+      a
+        text-decoration: none
+        color: $textWhite
+        font-family: 'Roboto'
+        font-size: 24px
+
+
+        position: absolute
+        bottom: 0
+        padding: 12px
+        width: 100%
+        height: 100%
+
+
+
+// フッター
+
 footer
   height : 300px
   padding: 40px
-  position: relative
-  top: 60px
   width: 100%
+  z-index: 100
+  position: relative
+  top: 108px
+
+
   background-image:  url("../../../dest/assets/images/footerneco.png")
   background-position: bottom right
   background-size: auto
   background-repeat: no-repeat
+  background-color: $black
+
   text-align: left
-  border-color: white
-  border-top: 1px
-  width: auto
 
   h3
     font-size: 2em
@@ -139,53 +228,37 @@ footer
       padding: 5px
 
 
-h1
-  margin: auto;
-  width: 100%
-  background-image: url("../../../dest/assets/images/header.jpg")
-  background-size: cover
-  background-position: center
+// innerbox内要素
 
+.wrap
+  display: flex
+  flex-direction: column
+  text-align: center
+  .mono
+    text-align: center
+    flex-grow: 1
+    flex-basis: 138px
+    margin: 6px
+    -webkit-transition: all 0.5s
+    -moz-transition: all 0.5s
+    -ms-transition: all 0.5s
+    -o-transition: all 0.5s
+    transition: all 0.5s
+    background-size: cover
 
-h2
-  font-family: 'Roboto'
-  padding: 0.5em;
-  text-align: center;
-  font-size: 3em;
-  margin-bottom: 0.5em;
-
-
-
-h3
-  padding: 25px
-  font-family: leaguegothic
-  font-size: 3em
-  transition: 0.2s
-  @media screen and (min-width: 960px)
-    font-size: 4em
-
-
-
-
-.m-wrapper
-  background: $accentYellow
-  color: $mainBlue
-  margin: auto;
-  padding:  3em 0
-  width: 100%
-  text-align: center;
-  font-size: 3em
-  letter-spacing: 2px;
-  font-family: leaguegothic
-  @media screen and (max-width: 600px)
-    padding: 1.5em
-
-  h3
-    font-size: 1em
-    padding: 0
-    margin: auto
+    h3
+      display: inline-block
+      font-size: 2.5em
+      font-family: 'leaguegothic'
+    h4
+      font-family: 'Roboto'
+      color: #ff1166
+      margin: 8px 0
+    p
+      margin: auto
+      font-size: 0.8em
   a
-    font-size: 0.5em
+    margin: 6px
     text-decoration: none
     color: $textWhite
     padding: 0.4em
@@ -198,77 +271,56 @@ h3
     color: $mainBlue
     background: $accentYellow
 
-.what-wrapper
-  background: $accentYellow
-  color: $mainBlue
-.m-projects-wrapper
-  background-color: rgba(0,0,0,0.8)
-  background-image: url(../../../dest/assets/images/project_unkn.gif)
-  background-size: cover
-  background-position: center center
+
+
+
+
+
+h1
+  margin: auto
+  width: 100%auto
+
+
+h2
+  font-family: 'Roboto'
+  padding: 0.5em
   text-align: center
-  color: $textWhite
-  .wrap
+  font-size: 3em
+  margin-bottom: 0.5em
 
-
+h3
+  font-family: 'Roboto'
+  padding: 25px
+  font-size: 3em
+  transition: 0.2s
+  @media screen and (min-width: 960px)
+    font-size: 4em
 
 
 .biography-wrapper
   h2
-    display: none;
+    display: none
   .person
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-
-    background-color:		rgba(0,0,0,0.5);
-    height: 150px
-    @media screen and (min-width: 960px)
-      height: 120px;
+    background-color:		rgba(0,0,0,0.5)
     background-size: cover
     background-position: left,center
     overflow: hidden
     position: relative
-
-    h3
-      display: inline-block
-
     .bioArticleWrap
-      -webkit-transition: all 0.5s;
-      -moz-transition: all 0.5s;
-      -ms-transition: all 0.5s;
-      -o-transition: all 0.5s;
-      transition: all 0.5s;
+      -webkit-transition: all 0.5s
+      -moz-transition: all 0.5s
+      -ms-transition: all 0.5s
+      -o-transition: all 0.5s
+      transition: all 0.5s
       position: absolute
       bottom: -200px
       width: 100%
       padding: 25px
-    h4
-      font-family: 'leaguegothic'
-      font-size: 2em
-      color: #ff1166
-    p
-      margin: auto
-    a
-      text-decoration: none
-      color: $textWhite
-      padding: 0.4em
-      background-color: $mainBlue
-      letter-spacing: 0.15em
-      display: inline-block
-      transition: 0.5s
-    a:hover
-      transition: 0.2s
-      color: $mainBlue
-      background: $accentYellow
-
-
   #geru
-    text-align: right;
+    text-align: right
     background-image:  url("../../../dest/assets/images/bg_geru2.jpg")
   #meg
+    text-align: left
     background-image: url("../../../dest/assets/images/bg_meg.jpg")
     background-position: right center
   #katasho
@@ -283,57 +335,37 @@ h3
 
 
 .projects-wrapper
-  background: $mainBlue
   overflow: hidden
+  h3
+    display: none
 
+  h4
+    font-size: 2.2em
+    color: $textWhite !important
+  a
+    padding: 0 !important
+  a:hover
+    border: 1px $textWhite solid
+    color: inherit !important
+    background-size: cover
 
-  .pjbox
-    clear: both
-    img
-      width: 30%
-      height : auto
-      float: left
-      margin: 12px 1.5%
-    h3
-      display: none
-    p
-      display: none
-
-
-  .pjleft
-    width: 25%;
-    padding: 25px
-    float: left;
-    background-color: #0d0322
-    .project
-      width: 100%
-      padding: 5px
-      h3
-        display: none
-      p
-        display: none
-      img
-        width : 100%
-  .pjright
-    background-color: #0d0322
-    width: 75%
-    float: right
-    p
-      padding: 25px
+  .bgMask
+    background-color: rgba(0, 0, 0, 0.7)
+    width: 100%
+    height: 100%
+  p
+    padding: 6px
+  #unkn
+    background-image: url('../../../dest/assets/images/project_unkn.png')
+  #poop
+    background-image: url('../../../dest/assets/images/project_youaredead.png')
+  #cute
+    background-image: url('../../../dest/assets/images/hypecute.png')
 
 .location-wrapper
-      clear: both
-      height: 400px
-      padding: 2em
-      h2
-        font-family: 'Roboto'
-        text-align: center
-        font-size: 2em
-        color: (100,100,100,50)
-      #map
-
-        height: 250px
-        width: 100%, 600px
+  #map
+    height: 250px
+    width: 100%, 600px
 
 .footer-wrapper
       clear: both
@@ -347,40 +379,3 @@ h3
 
 canvas
   display: block
-
-
-@mixin keyframes($animation-name: animaton)
-  @-webkit-keyframes #{$animation-name}
-    @content
-  @-moz-keyframes #{$animation-name}
-    @content
-  @keyframes #{$animation-name}
-    @content
-
-@mixin animation($animation-name)
-  -webkit-animation: #{$animation-name};
-  -moz-animation: #{$animation-name};
-  animation: #{$animation-name};
-  -webkit-animation-fill-mode: both;
-  -moz-animation-fill-mode: both;
-  animation-fill-mode: both;
-
-
-@for $i from 1 through 12
-  $DELAY: $i * 0.10s
-  @include keyframes(animationStroke#{$i})
-    0%
-      stroke-dashoffset: 2000
-    80%
-      fill: rgba(255,255,255,0)
-    90%
-      stroke-dashoffset: 0
-    100%
-      fill: rgba(255,255,255,1)
-  g.logosvg>path:nth-child(#{$i})
-    fill: none
-    stroke-width: 2
-    stroke: #fff
-    stroke-dasharray: 2000
-    stroke-dashoffset: 2000
-    @include animation(animationStroke#{$i} 2.0s ease-in $DELAY forwards)

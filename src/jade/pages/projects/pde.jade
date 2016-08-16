@@ -1,7 +1,8 @@
-h3 {{project.title}}
-  div(id='script_holder')
-  canvas(id='processing-canvas') 
-  p {{project.detail}}
-  p 
-    a(href="{{src}}") source code
-  p 2016/6/19 @kinakobooster
+div.wrap(padding="20px")
+  h3 {{project.title}}
+    canvas(id='processing-canvas') 
+    h6 {{project.detail}}
+    h6 
+      a(href="{{src}}") source code
+    h6 2016/6/19 @kinakobooster
+  a(ui-sref='projects') back to projects

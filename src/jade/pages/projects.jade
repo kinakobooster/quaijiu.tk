@@ -1,19 +1,15 @@
 ui-view
 	.projects-wrapper
-		h2 Projects	
-		.pjleft
-			.project(ng-click="open(true)")
-				h3 Eternal Unknown Pleasures
-				img#unkn(src="dest/assets/images/project_unkn.png", alt="Unknown Pleasures",onmouseover="this.src='dest/assets/images/project_unkn.gif'",onmouseout="this.src='dest/assets/images/project_unkn.png'")
-				p 
-			.project(ng-click="open(false)")
-				h3 You are DEAD
-				img(src="dest/assets/images/project_youaredead.png", alt="Escape from poop",onmouseover="this.src='dest/assets/images/project_youaredead.gif'",onmouseout="this.src='dest/assets/images/project_youaredead.png'")
-				p Escape from poop
-		.pjright
-			div(ng-repeat="p in projects")
-				div(ng-show="pShow[$index]")
-					h3 {{p.title}}
+		h3 Projects	
+		.wrap(ng-repeat="p in projects")
+			a.mono.project(ui-sref="projects.detail({projectName:p.name})" ng-attr-id="{{p.name}}")
+				.bgMask
+					h4 {{p.title}}
 					p {{p.detail}}
-					p 
-						a(ui-sref="projects.detail({projectName:p.name})") Show Detail
+					p {{p.date}}
+		.wrap
+			a.mono.project(id="cute" href="https://www.npmjs.com/package/hypercute")
+				.bgMask
+					h4 hypercute
+					p A port of the super cute theme to hyperterm.
+					p 2016/8/7
