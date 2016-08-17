@@ -7,8 +7,9 @@ int gameover = 0;
 int score = 0;
 boolean gameover = false;
 
+
 void setup(){
-  size(320,480);
+  size(320,600);
   particles = new ArrayList<Particle>();
   poop = loadImage("dest/assets/images/emoji_poop.png");
   hand = loadImage("dest/assets/images/emoji_hand.png");
