@@ -1,5 +1,14 @@
 'use strict';
 
+(function (i, s, o, g, r, a, m) {
+  i['GoogleAnalyticsObject'] = r;i[r] = i[r] || function () {
+    (i[r].q = i[r].q || []).push(arguments);
+  }, i[r].l = 1 * new Date();a = s.createElement(o), m = s.getElementsByTagName(o)[0];a.async = 1;a.src = g;m.parentNode.insertBefore(a, m);
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-41376889-4', 'auto');
+ga('send', 'pageview');
+'use strict';
+
 function init() {};
 
 var projects = [{ id: "2", title: 'Eternal Unknown Pleasures', detail: 'You can enjoy Unknown Pleasures etarnally...', date: '2016/5/5', name: "unkn" }, { id: "1", title: 'YOU ARE DEAD', detail: 'escape from poop death is inevitable', date: '2016/6/5', name: "poop" }];
