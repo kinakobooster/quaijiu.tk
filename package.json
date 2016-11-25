@@ -2,7 +2,7 @@
   "name": "etahapi.github.io",
   "version": "0.0.1",
   "description": "web site of etahapi",
-  "main": "gulpfile.jp",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,7 +28,6 @@
     "gulp-concat": "^2.6.0",
     "gulp-filter": ">=1.0.0",
     "gulp-inject": "^4.1.0",
-    "gulp-jade": "^1.0.0",
     "gulp-load-plugins": "^1.2.4",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.0.0",
@@ -41,5 +40,8 @@
     "node-sass": "^3.8.0",
     "vinyl-source-stream": "^1.1.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gulp-pug": "^3.1.0",
+    "pug": "^2.0.0-beta6"
+  }
 }
