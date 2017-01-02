@@ -1,2 +1,5 @@
 
-<h1> <img src="dest/assets/images/maintype.svg" alt="We are creative team in Eifuku" height="240px"/></h1>
+<article ng-repeat="kiji in kijis">
+  <h1>{{kiji.title}}</h1>
+  <div class="articlecontents">{{kiji.nakami}}</div>
+</article>

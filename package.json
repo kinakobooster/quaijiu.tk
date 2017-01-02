@@ -1,21 +1,21 @@
 {
-  "name": "etahapi.github.io",
+  "name": "quaijiu.tk",
   "version": "0.0.1",
-  "description": "web site of etahapi",
+  "description": "web site of quaijiu",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
-    "url": "git+https://github.com/etahapi/etahapi.github.io.git",
+    "url": "git+https://github.com/kinakobooster/quaijiu.tk",
     "type": "git"
   },
-  "author": "etahapi cipher",
+  "author": "megumi tree",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/etahapi/etahapi.github.io/issues"
+    "url": "https://github.com/kinakobooster/quaijiu.tk/issues"
   },
-  "homepage": "https://etahapi.github.io",
+  "homepage": "https://quaijiu.tk",
   "devDependencies": {
     "babel": "^6.5.2",
     "babel-core": "^6.10.4",

@@ -2,211 +2,79 @@
 <html ng-app="App" lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, maximum-scale=1.0, minimum-scale=0.5,user-scalable=yes,initial-scale=1.0">
-    <title>EIFUKU CIPHER</title>
+    <title>怪獣歌会</title>
     <link rel="stylesheet" type="text/css" href="dest/assets/stylesheets/main.css">
+    <link rel="stylesheet" type="text/css" href="dest/assets/stylesheets/tab.css">
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
-    <script src="https://angular-ui.github.io/ui-router/release/angular-ui-router.js">
-      <script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');ga('create', 'UA-41376889-4', 'auto');ga('send', 'pageview');
-      </script>
-    </script>
+    <script src="dest/assets/js/app.js"></script>
   </head>
   <body>
-    <div id="main_content">
-      <header>
-        <div class="headerWrapper">
-          <h1><a ui-sref="/"> <img src="dest/assets/images/eifukulogo.svg" alt="EIFUKU CIPHER"></a></h1>
-          <nav>
-            <ul>
-              <li><a ui-sref="biography">biography</a></li>
-              <li> <a ui-sref="projects">projects</a></li>
-              <li> <a ui-sref="map">access</a></li>
-              <li> <a ui-sref="contact">contact</a></li>
-            </ul>
-          </nav>
+    <nav></nav>
+    <header>
+      <h1>怪獣歌会</h1>
+    </header>
+    <div class="contents">
+      <article>
+        <h2>Quaijiu Vol.1</h2><span class="tag">ネットプリント</span><span class="tag">note</span><span class="tag">配信予定</span><span class="tweet"><a class="twitter-share-button" href="https://twitter.com/share" data-hashtags="quaijiu">Tweet </a>
+          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script></span>
+        <p>短歌などの紙、Quaijiuが出ます。</p>
+        <div class="gallery">
+          <input id="radio-tab1" type="radio" name="Tab" checked>
+          <label for="radio-tab1">
+            <div class="tabContents"> 
+              <h3>1.怪獣歌会宣言 / 連作5つ</h3>
+              <p>文学はしかし社会の奴隷として、虐げられたものを虐げ、搾取されたものを搾取し、殺されゆくものの背を崖に向かって押すことができる。<br>文学はしかしまつろわぬ民のアジールとして、体制の破壊者として、楽園からの途絶えがちな音信として、在ることもできる。<br>斃れゆく怪獣たちに花を。歩きつづける怪獣たちに乾杯を。</p>
+              <p class="source">怪獣歌会宣言より</p>
+            </div>
+            <div class="tabItem"> <span>1</span></div>
+          </label>
+          <input id="radio-tab2" type="radio" name="Tab">
+          <label for="radio-tab2">
+            <div class="tabContents"> 
+              <h3>2. 歌会禄Ⅰ 前半</h3>
+              <p>山城　そう、これ結構「女歌」意識して読めますよね。<br>斉藤　それだとやっぱり、「女が」苦しんでるんだなって思うと思うんですよ。〈女〉であることは自明のこととして見てる。でも私は、この歌を見たとき、〈女〉であることもできたし〈女〉でないこともできた魂が苦しんでると思うので、その差はすごい大きいと思うんですよね。</p>
+              <p class="source">歌会録Ⅰより抜粋</p>
+            </div>
+            <div class="tabItem"> <span>2</span></div>
+          </label>
+          <input id="radio-tab3" type="radio" name="Tab">
+          <label for="radio-tab3">
+            <div class="tabContents"> 
+              <h3>3. 歌会禄Ⅰ 後半 / 歌会禄Ⅱ 前半</h3>
+              <p>鳥居　だから、〈彼〉はめっちゃ強いわけじゃん。めっちゃ強いし、みんなの中にいるし、勝ち目があるかないかっていったら多分あんまりないんだよね。でも、生き延びるためには殺さなきゃいけないって言ってるのが、そうなんだよ！みたいな。</p>
+              <p class="source">歌会録Ⅰより抜粋</p>
+            </div>
+            <div class="tabItem"> <span>3</span></div>
+          </label>
+          <input id="radio-tab4" type="radio" name="Tab">
+          <label for="radio-tab4">
+            <div class="tabContents"> 
+              <h3>4. 歌会禄Ⅱ 後半</h3>
+              <p>斉藤　神なんじゃないですか。<br>川野　神なんですか？<br>斉藤　何かしら第三者的な。だって人だったら人かよって感じじゃないですか。<br>川野　神だったらお前何とかしろよって思いません？<br>斉藤　神は何とかしてくれないんですよ！</p>
+              <p class="source">歌会録Ⅱより抜粋</p>
+            </div>
+            <div class="tabItem"> <span>4</span></div>
+          </label>
         </div>
-      </header>
-      <div class="content">
-        <nav>
-          <ul>
-            <li><a ui-sref="biography">biography</a></li>
-            <li> <a ui-sref="projects">projects</a></li>
-            <li> <a ui-sref="map">access</a></li>
-            <li class="halfHeight"><a ui-sref="contact">contact</a></li>
-          </ul>
-        </nav>
-        <div ui-view autoscroll="false" class="innerbox"></div>
-      </div>
-      <footer></footer>
+        <h3>更新記録/予定</h3>
+        <p>	2017.1.7 ネットプリント配信予定<br>	2017.1.21 noteにて有料公開予定</p>
+        <h3>内容</h3>
+        <h4>怪獣歌会宣言</h4>
+        <p>川野芽生</p>
+        <h4>連作5つ</h4>
+        <p>川野芽生　斉藤志歩　鳥居萌　山城周　山中千瀬</p>
+        <h4>歌会録Ⅰ</h4>
+        <p>川野芽生　斉藤志歩　鳥居萌　山城周</p>
+        <h4>歌会録Ⅱ </h4>
+        <p>川野芽生　斉藤志歩　山城周　山中千瀬</p>
+        <p>ゲスト : 服部真理子</p>
+        <div class="articlefooter"><span class="date">2017.1.1</span></div>
+      </article>
     </div>
-    <!-- inject:pde-->
-<script type="text/processing" id = "pde_script_1">import java.util.*;
-ArrayList<Particle> particles;
-PImage poop,hand;
-PFont font;
-Particle p;
-int gameover = 0;
-int score = 0;
-boolean gameover = false;
-
-
-void setup(){
-  size(320,600);
-  particles = new ArrayList<Particle>();
-  poop = loadImage("dest/assets/images/emoji_poop.png");
-  hand = loadImage("dest/assets/images/emoji_hand.png");
-  font = createFont("Helvetica", 32);
-  textFont(font);
-}
-
-void draw(){
-  background(0);
-  particles.add(new Particle(new PVector(width/2,0)));
-
-  Iterator<Particle> it = particles.iterator();
-
-  while (it.hasNext()){
-    Particle p = it.next();
-    p.run();
-    if(p.isDead()){
-      it.remove();
-    }
-    if(p.isTouch()){
-      gameOver();
-      break;
-    }
-
-
-  }
-  image(hand,mouseX,mouseY);
-  if(frameCount % 10 == 0)  score++;
-  text(score,50,330);
-
-}
-void gameOver(){
-  fill(255,0,0,50);
-  rect(0,0,width,height);
-  fill(255);
-  text("YOU are DEAD", 50,50);
-  gameover = true;
-  noLoop();
-
-}
-
-void mouseClicked(){
-  if(gameover == true){
-  particles.clear();
-  score = 0;
-  loop();
-  gameover = false;
-}
-
-}
-
-
-
-class Particle{
-  PVector loc;
-  PVector vel;
-  PVector acc;
-  float lifespan;
-  float mass;
-
-  Particle(PVector l ){
-   loc = l.get();
-   acc = new PVector(0,0.05);
-   vel = new PVector(random(-1,1),random(-1,1));
-   lifespan = 255;
-   mass = 10;
-
-
-   }
-
-   void run(){
-     applyForce(mouseForce());
-     update();
-     display();
-   }
-
-   void update(){
-     vel.add(acc);
-     loc.add(vel);
-     lifespan--;
-
-   }
-
-   void display(){
-     noStroke();
-     fill(255,lifespan);
-     image(poop, loc.x,loc.y);
-     }
-
-   void applyForce(PVector f){
-     f.mult(1/mass);
-     acc.add(f);
-     acc.mult(0.8);
-
-   }
-
-     boolean isTouch(){
-     PVector mousepos = new PVector(mouseX,mouseY);
-     if (PVector.dist(mousepos,loc) < 4) return true;
-     else return false;
-   }
-
-   PVector mouseForce(){
-     PVector mousepos = new PVector(mouseX,mouseY);
-     PVector f = PVector.sub(mousepos,loc);
-     f.normalize();
-     f.mult(0.05);
-     return f;
-   }
-
-   boolean isDead(){
-   if(lifespan < 0)     return true;
-   else return false;
-
-   }
-
-}
-</script>
-<script type="text/processing" id = "pde_script_2">int STROKECOUNT = 48;
-
-void setup(){
-  size(320,500);
-  //smooth();
-}
-
-void draw(){
-  background(0);
-  strokeWeight(2);
-  stroke(255);
-  fill(0);
-  int step = 4;
-  float lastx = -999;
-  float lasty = -999;
-  float ynoise = float(frameCount)/20;
-  float y;
-  float ystep = (height-130) / STROKECOUNT;
-
-  for (int yorigin = 80; yorigin < height-50; yorigin+=ystep){
-    beginShape();
-    for (float x=20; x<=width-20; x+=step) {
-       y = yorigin -  noise(ynoise + x/200)*80 * exp(pow((x - width/2 - sin(yorigin/ystep)*random(10))/50,2)*(-0.95));
-      if (lastx > -999) {
-        vertex(x, y);
-    }
-    lastx = x; lasty = y; ynoise += 0.1;
-    }
-    endShape();
-    lastx = -999; ynoise += 0.2;
-  }
-
-}
-</script>
-<!-- endinject-->
+    <footer ng-controller="linksController">
+      <dl ng-repeat="link in links"><a href="{{link.url}}">
+          <td><img src="dest/assets/images/{{link.image}}" alt="{{link.name}}"></td>
+          <dd>{{link.view}}</dd></a></dl>
+    </footer>
   </body>
 </html>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBLlGM_IwpYJ2qADoVLNpUYMQCZP597Mvw&amp;language=en&amp;callback=init"></script>
-<script src="dest/assets/js/processing.js"></script>
-<script src="dest/assets/js/app.js"></script>

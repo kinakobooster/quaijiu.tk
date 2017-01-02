@@ -1,0 +1,72 @@
+$length: 4
+@for $i from 1 through $length
+  .gallery label:nth-child(#{$i*2}) .tabItem
+    background-image: url("../images/quaijiu1-#{$i}.png")
+    background-position: center
+    width: 20%
+    position: absolute
+    font-size: 0
+    left: $i*23 - 17.5%
+    padding-top: 20%
+    background-size: contain
+    text-align: center
+
+    background-repeat: no-repeat
+
+
+    
+
+
+.gallery
+  clear:  both
+  overflow:  hidden
+  position:  relative
+  min-height: 480px
+  width: 100%
+
+  input[type='radio']
+    display: none
+ 
+  input + label .tabContents  
+    display: none
+
+  input:checked + label .tabContents 
+    position: absolute
+    top: 0
+    left: 0
+    display: block 
+    border: solid 1px #888 
+    border-radius : 3px
+    width: 99%
+    margin: 12px auto
+    height: 300px
+    overflow: scroll
+    background-image: url('../images/quaijiubg.png')
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+
+
+    h3
+      width: 90%
+      margin: 18px auto
+      font-size: 24px
+    p
+      width: 80%
+      margin: auto
+      display: block
+      font-size: 14px
+      line-height: 2em
+
+    .source
+      text-align: right
+      bottom: 18px
+      right: 18px
+      font-size: 0.8em
+      color: #666
+
+
+input + label .tabItem
+  top: 324px
+input:checked + label .tabItem
+  top: 300px

@@ -114,4 +114,4 @@ gulp.task('watch', function() {
   });
 });
 
-gulp.task('default', ['sass', 'index', 'pug', 'script', 'pde', 'browser-sync', 'watch']);
+gulp.task('default', ['sass', 'index', 'pug', 'script', 'browser-sync', 'watch']);
