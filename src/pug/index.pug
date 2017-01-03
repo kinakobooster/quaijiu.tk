@@ -24,6 +24,8 @@ html(ng-app="App" lang='en')
 				span.tweet
 					a(href="https://twitter.com/share" class="twitter-share-button" data-hashtags="quaijiu") Tweet 
 					script !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+
+					iframe( src="https://www.facebook.com/plugins/share_button.php?href=http%3A%2F%2Fquaijiu.tk&layout=button&size=small&mobile_iframe=true&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true")
 				p
 					| 短歌などの紙、Quaijiuが出ます。
 
@@ -33,14 +35,15 @@ html(ng-app="App" lang='en')
 		
 						.tabContents 
 
-							h3 1.怪獣歌会宣言 / 連作5つ
+							h3 1枚目　怪獣歌会宣言 / 連作5つ
+							p.source 怪獣歌会宣言より
 							p
 								| 文学はしかし社会の奴隷として、虐げられたものを虐げ、搾取されたものを搾取し、殺されゆくものの背を崖に向かって押すことができる。
 								br
 								| 文学はしかしまつろわぬ民のアジールとして、体制の破壊者として、楽園からの途絶えがちな音信として、在ることもできる。
 								br
 								| 斃れゆく怪獣たちに花を。歩きつづける怪獣たちに乾杯を。
-							p.source 怪獣歌会宣言より
+							
 						.tabItem 
 							span 1
 						
@@ -48,12 +51,13 @@ html(ng-app="App" lang='en')
 					label(for="radio-tab2")
 					
 						.tabContents 
-							h3 2. 歌会禄Ⅰ 前半
+							h3 2枚目　歌会禄Ⅰ 前半
+							p.source 歌会録Ⅰより抜粋
 							p
 								| 山城　そう、これ結構「女歌」意識して読めますよね。
 								br
 								| 斉藤　それだとやっぱり、「女が」苦しんでるんだなって思うと思うんですよ。〈女〉であることは自明のこととして見てる。でも私は、この歌を見たとき、〈女〉であることもできたし〈女〉でないこともできた魂が苦しんでると思うので、その差はすごい大きいと思うんですよね。
-							p.source 歌会録Ⅰより抜粋
+							
 						.tabItem 
 							span 2
 					
@@ -62,10 +66,11 @@ html(ng-app="App" lang='en')
 					
 						.tabContents 
 						
-							h3 3. 歌会禄Ⅰ 後半 / 歌会禄Ⅱ 前半
+							h3 3枚目　歌会禄Ⅰ 後半 / 歌会禄Ⅱ 前半
+							p.source 歌会録Ⅰより抜粋
 							p
 								| 鳥居　だから、〈彼〉はめっちゃ強いわけじゃん。めっちゃ強いし、みんなの中にいるし、勝ち目があるかないかっていったら多分あんまりないんだよね。でも、生き延びるためには殺さなきゃいけないって言ってるのが、そうなんだよ！みたいな。
-							p.source 歌会録Ⅰより抜粋
+							
 						.tabItem 
 							span 3
 						
@@ -74,7 +79,8 @@ html(ng-app="App" lang='en')
 					label(for="radio-tab4")
 					
 						.tabContents 
-							h3 4. 歌会禄Ⅱ 後半
+							h3 4枚目 歌会禄Ⅱ 後半
+							p.source 歌会録Ⅱより抜粋
 							p
 								| 斉藤　神なんじゃないですか。
 								br
@@ -85,7 +91,7 @@ html(ng-app="App" lang='en')
 								| 川野　神だったらお前何とかしろよって思いません？
 								br
 								| 斉藤　神は何とかしてくれないんですよ！
-							p.source 歌会録Ⅱより抜粋
+						
 						.tabItem 
 							span 4
 						
@@ -101,23 +107,27 @@ html(ng-app="App" lang='en')
 				p 川野芽生
 
 				h4 連作5つ
-				p 川野芽生　斉藤志歩　鳥居萌　山城周　山中千瀬
+				p 鳥居萌　川野芽生　山中千瀬　山城周　斉藤志歩
 
 				h4 歌会録Ⅰ
-				p 川野芽生　斉藤志歩　鳥居萌　山城周
+				p 鳥居萌　川野芽生　山城周　斉藤志歩
 
 				h4 歌会録Ⅱ 
-				p 川野芽生　斉藤志歩　山城周　山中千瀬
+				p 川野芽生　山中千瀬　山城周　斉藤志歩
 				p ゲスト : 服部真理子
 
+				p.tyuu (敬称略、いろは順)
 				.articlefooter
 					span.date 2017.1.1
 
 		footer(ng-controller='linksController')
-			dl(ng-repeat='link in links')
-				a(href='{{link.url}}')
-					td
-						img(src='dest/assets/images/{{link.image}}',alt='{{link.name}}')
-					dd {{link.view}}
-					
+			p
+				img(src="dest/assets/images/quaijiu_icon_white.png")
+			.flex
+				dl(ng-repeat='link in links')
+					a(href='{{link.url}}')
+						td
+							img(src='dest/assets/images/{{link.image}}',alt='{{link.name}}')
+						dd {{link.view}}
+						
 			

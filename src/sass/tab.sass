@@ -1,3 +1,30 @@
+@mixin keyframes($animation-name) 
+  @-webkit-keyframes $animation-name 
+    @content;
+  @-moz-keyframes $animation-name 
+    @content;
+  @keyframes $animation-name 
+    @content;
+
+@mixin animation($animation-name) 
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+@include keyframes(fadein)
+  0% 
+    opacity: 0
+  100% 
+    opacity: 1
+
+#hoge
+    @include animation(fadein 1.2s ease 0.15s)
+
+
+
 $length: 4
 @for $i from 1 through $length
   .gallery label:nth-child(#{$i*2}) .tabItem
@@ -10,8 +37,8 @@ $length: 4
     padding-top: 20%
     background-size: contain
     text-align: center
-
     background-repeat: no-repeat
+
 
 
     
@@ -45,28 +72,32 @@ $length: 4
     background-size: contain
     background-repeat: no-repeat
     background-position: center
+    
 
 
     h3
       width: 90%
-      margin: 18px auto
+      margin: 18px auto 0
       font-size: 24px
+      @include animation(fadein 0.4s ease 0.15s)
     p
       width: 80%
       margin: auto
       display: block
       font-size: 14px
       line-height: 2em
+      @include animation(fadein 1.9s ease 0.15s)
 
     .source
-      text-align: right
-      bottom: 18px
-      right: 18px
+      text-align: left
       font-size: 0.8em
       color: #666
+      margin: 12px auto
 
 
 input + label .tabItem
   top: 324px
 input:checked + label .tabItem
   top: 300px
+
+

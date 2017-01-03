@@ -1,3 +1,30 @@
+@mixin keyframes($animation-name) 
+  @-webkit-keyframes $animation-name 
+    @content;
+  @-moz-keyframes $animation-name 
+    @content;
+  @keyframes $animation-name 
+    @content;
+
+@mixin animation($animation-name) 
+  -webkit-animation: $animation-name;
+  -moz-animation: $animation-name;
+  animation: $animation-name;
+  -webkit-animation-fill-mode: both;
+  -moz-animation-fill-mode: both;
+  animation-fill-mode: both;
+
+@include keyframes(fadein)
+  0% 
+    opacity: 0
+  100% 
+    opacity: 1
+
+#hoge
+    @include animation(fadein 1.2s ease 0.15s)
+
+
+
 body
   color : black
   max-width: 960px
@@ -24,10 +51,10 @@ header
     h2
       font-size: 48px
       line-height: 48px
-      margin: 18px 0
+      margin: 36px 0 18px
     .tag
       display: inline-block
-      background: #aaa
+      background: #ccc
       padding: 6px 12px
       border-radius: 20px
       font-size: 10px
@@ -42,7 +69,10 @@ header
 
     p
       margin: 20px
-      font-size: 12px
+      font-size: 16px
+    p.tyuu
+      font-size: 0.7em
+      color: #666
     .articlefooter
       width: 100%
       border-top: 1px solid #666
@@ -52,17 +82,39 @@ header
         font-size: 0.7em
 footer
   background: #D5D5D5
-  margin: auto
+  margin: 24 0
   text-align: center
-  display: flex
-  padding: 60px
-  margin-top: 24px 
+ 
+  padding: 60px 0
+  margin-top: 36px 
+  width: 100%
+
+  p 
+    width: 100%
+    -webkit-flex-direction: column; /* Safari */
+    flex-direction:         column;
+    margin: 48px auto
+  a 
+    text-decoration: none
+    color: #cc6666
+
+  a:hover
+    text-decoration: underline
+
+  .flex
+     display: flex
+     margin: 24px auto
 
   dl
+    margin: auto
     -webkit-flex-direction: row; /* Safari */
     flex-direction:         row;
-    margin: auto
+
+    width: 25%
+     
     td
     dd
-     margin: 0
+     margin: 12px 0
     
+
+
