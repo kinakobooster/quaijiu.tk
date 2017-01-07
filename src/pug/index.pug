@@ -1,12 +1,23 @@
 doctype html
-html(ng-app="App" lang='en')
+html(ng-app='App' lang='en')
 	head
 			meta(charset='utf-8')
+			meta(name='keywords',content='怪獣,短歌,クィア,ジェンダー,歌会')
+			meta(name='description' content='がおー')
+			meta(name='twitter:card' content='summary')
+			meta(name='twitter:site' content='@quaijiu')
+			meta(name='twitter:title' content='怪獣歌会')
+			meta(name='twitter:description' content='短歌の集まり、怪獣歌会のウェブサイトです')
+			meta(name='twitter:image' content='http://quaijiu.tk/dest/assets/images/header.png')
+			meta(name='twitter:url' content=
+			'http://quaijiu.tk/')
+			meta(name="viewport" content='width=device-width,initial-scale=1.0,minimum-scale=1.0')
 			title='怪獣歌会'
 			link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/main.css')
 			link(rel='stylesheet' type='text/css' href='dest/assets/stylesheets/tab.css')
 			script(src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js')
 			script(src='dest/assets/js/app.js')
+
 	body
 		nav
 			
@@ -19,7 +30,7 @@ html(ng-app="App" lang='en')
 				h2 Quaijiu Vol.1
 				span.tag ネットプリント
 				span.tag note
-				span.tag 配信予定
+				span.tag 配信中
 				
 				span.tweet
 					a(href="https://twitter.com/share" class="twitter-share-button" data-hashtags="quaijiu") Tweet 
@@ -98,9 +109,9 @@ html(ng-app="App" lang='en')
 
 				h3 更新記録/予定
 				p
-					|	2017.1.7 ネットプリント配信予定
+					|	2017.1.8 ネットプリント配信
 					br
-					|	2017.1.21 noteにて有料公開予定
+					|	2017.1.21 note,kindleにて有料公開予定
 
 				h3 内容
 				h4 怪獣歌会宣言
@@ -111,23 +122,33 @@ html(ng-app="App" lang='en')
 
 				h4 歌会録Ⅰ
 				p 鳥居萌　川野芽生　山城周　斉藤志歩
+				h5 話されていること
+				p 性別の恣意性、女「である」ことと女「に生まれる」こと、フェミニズムとレスビアン、男性原理としての神
+				
 
 				h4 歌会録Ⅱ 題「生」
 				p 川野芽生　山中千瀬　山城周　斉藤志歩
 				p ゲスト : 服部真理子
+				h5 話されていること
+				p 一度きりの生、いくつもの生、動物の搾取と殺害、メディア、自己と世界の純粋性
 
+				h4 デザイン
+				p 鳥居萌
+
+				h3 製作者のことば
+				p 「何度読んでも楽しい」
+				p 「壁に貼りたい」
+				p 「人を救おう」
 				p.tyuu (敬称略、いろは順)
 				.articlefooter
 					span.date 2017.1.1
 
-		footer(ng-controller='linksController')
-			p
-				img(src="dest/assets/images/quaijiu_icon_white.png")
-			.flex
-				dl(ng-repeat='link in links')
-					a(href='{{link.url}}')
-						td
-							img(src='dest/assets/images/{{link.image}}',alt='{{link.name}}')
-						dd {{link.view}}
-						
-			
+	footer(ng-controller='linksController')
+		p
+			img(src="dest/assets/images/quaijiu_icon_white.png")
+		.flex
+			dl(ng-repeat='link in links')
+				a(href='{{link.url}}')
+					td
+						img(src='dest/assets/images/{{link.image}}',alt='{{link.name}}')
+					dd {{link.view}}
