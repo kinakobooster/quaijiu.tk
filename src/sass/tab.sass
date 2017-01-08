@@ -46,10 +46,13 @@ $length: 4
 
 .gallery
   clear:  both
-  overflow:  hidden
+  overflow: scroll
   position:  relative
   min-height: 480px
   width: 100%
+  @media screen and (max-width: 600px)
+    height: 600px
+
 
   input[type='radio']
     display: none
@@ -72,6 +75,11 @@ $length: 4
     background-size: contain
     background-repeat: no-repeat
     background-position: center
+    @media screen and (max-width: 600px) 
+      font-size: 18px
+      height: 450px
+      padding: 12px 0
+      
     
 
 
@@ -80,6 +88,8 @@ $length: 4
       margin: 18px auto 0
       font-size: 24px
       @include animation(fadein 0.4s ease 0.15s)
+      @media screen and (max-width: 600px)
+        width: 95%
     p
       width: 80%
       margin: auto
@@ -87,6 +97,9 @@ $length: 4
       font-size: 14px
       line-height: 2em
       @include animation(fadein 1.9s ease 0.15s)
+      @media screen and (max-width: 600px)
+        font-size: 18px
+        width: 95%
 
     .source
       text-align: left
@@ -97,7 +110,10 @@ $length: 4
 
 input + label .tabItem
   top: 324px
+  @media screen and (max-width: 600px)
+    top: 504px
 input:checked + label .tabItem
   top: 300px
-
+  @media screen and (max-width: 600px)
+      top: 480px
 
