@@ -1,2 +1,2 @@
-# kinakobooster's official website
+# Quaijiu's official website
 website
